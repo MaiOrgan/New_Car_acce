@@ -5,27 +5,8 @@ import today.edu.User;
 import today.edu.Car;
 import today.edu.order;
 import java.util.Scanner;
-import java.util.logging.Logger;
-import java.util.logging.*;
 
 public class Main {
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
-    static {
-        Handler consoleHandler = new ConsoleHandler();
-        consoleHandler.setFormatter(new Formatter() {
-            @Override
-            public String format(LogRecord record) {
-                return record.getLevel() + ": " + record.getMessage() + "\n";
-            }
-        });
-        logger.addHandler(consoleHandler);
-        logger.setLevel(Level.ALL);
-        Logger rootLogger = Logger.getLogger("");
-        Handler[] handlers = rootLogger.getHandlers();
-        if (handlers[0] instanceof ConsoleHandler) {
-            rootLogger.removeHandler(handlers[0]);
-        }
-    }
     static MyAppT o = new MyAppT();
     static final public String Description = " || Description about it:- ";
     public static int exf(String ku,String p)
@@ -158,18 +139,18 @@ public class Main {
         switch (choice) {
             case 1 -> signUpProcedure(input);
             case 2 -> loginProcedure(input);
-            default -> logger.info("Invalid option selected.");
+            default -> System.out.println("Invalid option selected.");
         }
     }
 
     private static void displayMainMenu() {
-        logger.info("The menu of our program like that:-");
-        logger.info("1: Sign up to make a new account");
-        logger.info("2: Log in to your previous account");
+        System.out.println("The menu of our program like that:-");
+        System.out.println("1: Sign up to make a new account");
+        System.out.println("2: Log in to your previous account");
     }
 
     private static void signUpProcedure(Scanner input) {
-        logger.info("In order to make a new account you have to enter your information");
+        System.out.println("In order to make a new account you have to enter your information");
         String email = getInput(input, "Please enter your Gmail");
         String password = getInput(input, "Please enter your password");
         String birthDate = getInput(input, "Please enter your BirthDate");
@@ -182,41 +163,41 @@ public class Main {
 
         int loginStatus = exf(email, password);
         if (email.equals("-"))
-            logger.info("You have to write your name cant be empty");
+            System.out.println("You have to write your name cant be empty");
         else if (password.equals("-"))
-            logger.info("You have to write your password cant be empty");
+            System.out.println("You have to write your password cant be empty");
         else if (loginStatus == 0) {
-            logger.info("There's something wrong; there's no account with this information.");
+            System.out.println("There's something wrong; there's no account with this information.");
         } else {
             userLoggedIn(input);
         }
     }
 
     private static String getInput(Scanner input, String prompt) {
-        logger.info(prompt);
+        System.out.println(prompt);
         return input.next();
     }
 
     private static void userLoggedIn(Scanner input) {
-        logger.info("You have logged in successfully");
-        logger.info("Now, in order to see your permissions you have to enter the specific id for your position");
+        System.out.println("You have logged in successfully");
+        System.out.println("Now, in order to see your permissions you have to enter the specific id for your position");
         int userId = input.nextInt();
 
         switch (userId) {
             case 1 -> handleAdminActions(input);
             case 2 -> System.out.println("This ID means that you are the INSTALLER so your permissions like that:-");
             case 3 -> handleCustomerActions(input);
-            default -> logger.info("Invalid user ID.");
+            default -> System.out.println("Invalid user ID.");
         }
     }
     private static void handleAdminActions(Scanner input) {
         boolean continueManaging = true;
         while (continueManaging) {
-            logger.info("You are the ADMIN. Please select an action:");
-            logger.info("1: Manage user accounts");
-            logger.info("2: Manage products");
-            logger.info("3: Manage Availability Date");
-            logger.info("4: Log out");
+            System.out.println("You are the ADMIN. Please select an action:");
+            System.out.println("1: Manage user accounts");
+            System.out.println("2: Manage products");
+            System.out.println("3: Manage Availability Date");
+            System.out.println("4: Log out");
             int choice = input.nextInt();
             switch (choice) {
                 case 1 -> adminManageUsers(input);
@@ -224,7 +205,7 @@ public class Main {
                 case 3 -> addAvailabilityDate(input);
                 case 4 -> {
                     continueManaging = false;
-                    logger.info("Logging out as admin.");
+                    System.out.println("Logging out as admin.");
                 }
                 default -> printing();
             }
@@ -235,11 +216,11 @@ public class Main {
     private static void handleCustomerActions(Scanner input) {
         boolean continueShopping = true;
         while (continueShopping) {
-            logger.info("You are the CUSTOMER. Please select an action:");
-            logger.info("1: Buy a product");
-            logger.info("2: Change password");
-            logger.info("3: View order history");
-            logger.info("4: Log out");
+            System.out.println("You are the CUSTOMER. Please select an action:");
+            System.out.println("1: Buy a product");
+            System.out.println("2: Change password");
+            System.out.println("3: View order history");
+            System.out.println("4: Log out");
             int choice = input.nextInt();
             switch (choice) {
                 case 1 -> customerBuyProduct(input);
@@ -247,7 +228,7 @@ public class Main {
                 case 3 -> customerViewOrderHistory(input);
                 case 4 -> {
                     continueShopping = false;
-                    logger.info("Logging out as customer.");
+                    System.out.println("Logging out as customer.");
                 }
                 default -> printing();
             }
@@ -256,11 +237,11 @@ public class Main {
     private static void adminManageUsers(Scanner input) {
         boolean continueManaging = true;
         while (continueManaging) {
-            logger.info("Select an action for user management:");
-            logger.info("1: Change user information");
-            logger.info("2: Add new user");
-            logger.info("3: See all user accounts");
-            logger.info("4: Return to admin menu");
+            System.out.println("Select an action for user management:");
+            System.out.println("1: Change user information");
+            System.out.println("2: Add new user");
+            System.out.println("3: See all user accounts");
+            System.out.println("4: Return to admin menu");
 
             int action = input.nextInt();
             switch (action) {
@@ -273,24 +254,24 @@ public class Main {
         }
     }
     private static void changeUserInformation(Scanner input) {
-        logger.info("Enter the username of the account to update:");
+        System.out.println("Enter the username of the account to update:");
         String username = input.next();
-        logger.info("Enter the new password for the account:");
+        System.out.println("Enter the new password for the account:");
         String newPassword = input.next();
 
         int result = changeInfo(username, newPassword);
         if (result == 0) {
-            logger.info("No account founded with this gmail");
+            System.out.println("No account founded with this gmail");
         } else {
-            logger.info("Password has changed in successfully way");
+            System.out.println("Password has changed in successfully way");
         }
     }
     private static void addUser(Scanner input) {
-        logger.info("Enter the new username (email):");
+        System.out.println("Enter the new username (email):");
         String username = input.next();
-        logger.info("Enter the password for the new account:");
+        System.out.println("Enter the password for the new account:");
         String password = input.next();
-        logger.info("Enter the birth date for the new account (format DD/MM/YYYY):");
+        System.out.println("Enter the birth date for the new account (format DD/MM/YYYY):");
         String birthDate = input.next();
         adding(username, password, birthDate);
     }
@@ -298,19 +279,19 @@ public class Main {
         o.seeUser();
     }
     private static void printing() {
-        logger.info("Invalid choice, please try again.");
+        System.out.println("Invalid choice, please try again.");
     }
 
     private static void adminManageProducts(Scanner input) {
         boolean continueManaging=true;
         while (continueManaging) {
-            logger.info("Select an action for product management:");
-            logger.info("1: Add a new product");
-            logger.info("2: List all products");
-            logger.info("3: Search for a product by name");
-            logger.info("4: Search for a product by category");
-            logger.info("5: Search for a product by price");
-            logger.info("6: Return to admin menu");
+            System.out.println("Select an action for product management:");
+            System.out.println("1: Add a new product");
+            System.out.println("2: List all products");
+            System.out.println("3: Search for a product by name");
+            System.out.println("4: Search for a product by category");
+            System.out.println("5: Search for a product by price");
+            System.out.println("6: Return to admin menu");
 
             int action = input.nextInt();
             switch (action) {
@@ -325,78 +306,78 @@ public class Main {
         }
     }
     private static void addProduct(Scanner input) {
-        logger.info("Enter the name of the product:");
+        System.out.println("Enter the name of the product:");
         String name = input.next();
-        logger.info("Enter the product's category:");
+        System.out.println("Enter the product's category:");
         String category = input.next();
-        logger.info("Enter the price of the product:");
+        System.out.println("Enter the price of the product:");
         int price = input.nextInt();
-        logger.info("Enter the number of available units:");
+        System.out.println("Enter the number of available units:");
         int availability = input.nextInt();
-        logger.info("Enter a description for the product:");
+        System.out.println("Enter a description for the product:");
         String description = input.next(); // Assuming description is a single word; if not, use input.nextLine()
 
         o.theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(name, category, price, availability, description);
-        logger.info("Product added successfully.");
+        System.out.println("Product added successfully.");
     }
     private static void listAllProducts() {
         listting();
     }
     private static void searchProductByName(Scanner input) {
-        logger.info("Enter the name of the product to search:");
+        System.out.println("Enter the name of the product to search:");
         String name = input.next();
         o.iRequestInformationAboutSpecificProductByEnteringItsName(name);
     }
     private static void searchProductByCategory(Scanner input) {
-        logger.info("Enter the category of the products to search:");
+        System.out.println("Enter the category of the products to search:");
         String category = input.next();
         iRequestInformationAboutSpecificProductByEnteringItsName2(category);
     }
     private static void searchProductByPrice(Scanner input) {
-        logger.info("Enter the price of the product to search:");
+        System.out.println("Enter the price of the product to search:");
         int price = input.nextInt();
         iRequestInformationAboutSpecificProductByEnteringItsName22(price);
     }
 
 
     private static void addAvailabilityDate(Scanner input) {
-        logger.info("Write the date that you want to make it available for buying (format DD/MM/YYYY):");
+        System.out.println("Write the date that you want to make it available for buying (format DD/MM/YYYY):");
         String date = input.next();
         o.date.add(date);
-        logger.info("Date added successfully.");
+        System.out.println("Date added successfully.");
     }
 
 
 
     private static void customerBuyProduct(Scanner input) {
-        logger.info("Please enter the name of the product you wish to purchase:");
+        System.out.println("Please enter the name of the product you wish to purchase:");
         String productName = input.next();
-        logger.info("Enter the desired date for purchase:");
+        System.out.println("Enter the desired date for purchase:");
         String purchaseDate = input.next();
-        logger.info("Enter the quantity you wish to purchase:");
+        System.out.println("Enter the quantity you wish to purchase:");
         int quantity = input.nextInt();
         buying(productName, purchaseDate, quantity);
     }
 
     private static void customerChangePassword(Scanner input) {
-        logger.info("Enter your current email:");
+        System.out.println("Enter your current email:");
         String email = input.next();
-        logger.info("Enter your new password:");
+        System.out.println("Enter your new password:");
         String newPassword = input.next();
         int result = o.yourInformationUpdatesSuccessfully(email, newPassword);
         if (result == 1) {
-            logger.info("Password changed successfully.");
+            System.out.println("Password changed successfully.");
         } else {
-            logger.info("Failed to change password. User not found.");
+            System.out.println("Failed to change password. User not found.");
         }
     }
 
     private static void customerViewOrderHistory(Scanner input) {
-        logger.info("Enter your email to view order history:");
+        System.out.println("Enter your email to view order history:");
         String email = input.next();
         int result = theInformationShouldAppear(email);
         if (result == 0) {
-            logger.info("No orders found for this email.");
+            System.out.println("No orders found for this email.");
         }
     }
 
