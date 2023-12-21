@@ -30,19 +30,19 @@ public class MyAppT
         cp.add(c2);
         User u3= new User("Fatina","1234","2\4\2004");
         up.add(u3);
-        order o1 = new order(u3.getUser_name(), c2.getCar_name(), "20-10-2023");
+        order o1 = new order(u3.getUserName(), c2.getCar_name(), "20-10-2023");
         op.add(o1);
         date.add("20-10-2023");
         date.add("22-10-2023");
         date.add("5-11-2023");
     }
     public void setUsernameAndPassAndPassFromSystem(String user_name, String pass) {
-        
+
         for (User u: up) {
 
-            if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
+            if (user_name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true;
-                
+
                 logger.info("hi");
                 break;
             }}
@@ -50,14 +50,14 @@ public class MyAppT
     public void setInvalidUsernameAndPass(String user_name, String pass) {
         // Write code here that turns the phrase above into concrete actions
         for (User u: up) {
-            if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
+            if (user_name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true; break;
             }
         }
     }
     public void setValidUsernameAndInvalidPass(String user_name, String pass) {
         for (User u: up) {
-            if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
+            if (user_name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true; break;
             }
         }
@@ -77,7 +77,7 @@ public class MyAppT
 
     public void theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(String name, String categorie, int price, int ava, String desc) {
         cp.add(new Car(name, categorie, price, ava, desc));
-        
+
         logger.info("You have added this product in a successfully way");
     }
 
@@ -86,7 +86,7 @@ public class MyAppT
             if(name.equals(c.getCar_name())){
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
-                
+
                 logger.info("Category:- "+c.getCategorie()+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.getDescr());
             }
         }
@@ -95,14 +95,14 @@ public class MyAppT
     {
         for(User c:up)
         {
-            
-           logger.info("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
+
+            logger.info("Gmail:- "+c.userName +"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.birthDate);
         }
     }
     int yuy=0;
     public int yourInformationUpdatesSuccessfully(String name,String pass) {
         for (User u : up) {
-            if (name.equals(u.getUser_name())) {
+            if (name.equals(u.getUserName())) {
                 u.setPass(pass);
                 yuy=1;
                 break;
@@ -117,7 +117,7 @@ public class MyAppT
     public void validUserPass(String user_name, String pass){
         forget = false;
         for (User u: up) {
-            if (user_name.equals(u.getUser_name()) && pass.equals("Forget")) {
+            if (user_name.equals(u.getUserName()) && pass.equals("Forget")) {
                 forget = true;
                 enteredUsername = user_name;
                 break;
@@ -126,12 +126,12 @@ public class MyAppT
     }
     public void takePass(String newPass){
         for (User user : up) {
-            if (user.getUser_name().equals(enteredUsername)) {
+            if (user.getUserName().equals(enteredUsername)) {
                 user.setPass(newPass);
             }
-         }
+        }
         for (User user : up) {
-            if (user.getUser_name().equals(enteredUsername) && user.getPass().equals(newPass)) {
+            if (user.getUserName().equals(enteredUsername) && user.getPass().equals(newPass)) {
                 passwordUpdated = true;
                 break;
             }
@@ -139,7 +139,7 @@ public class MyAppT
     }
     public void createAcc(String enteredUsernam,String enteredPasswor){
         for (User user : up) {
-            if (user.getUser_name().equals(enteredUsernam) && user.getPass().equals(enteredPasswor)) {
+            if (user.getUserName().equals(enteredUsernam) && user.getPass().equals(enteredPasswor)) {
                 userCreated = true;
                 break;
             }
@@ -147,7 +147,7 @@ public class MyAppT
     }
     public void setNamePass(String user_name, String pass){
         for (User u: up) {
-            if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
+            if (user_name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true;
                 break;
             }
@@ -186,12 +186,12 @@ public class MyAppT
     }
     public void printCarList(int choose){
         if(choose==1){
-        for(Car c:carArrayList){
-            logger.info(c.getCar_name());
-            logger.info(String.format(" %d", c.getPrice()));
-            logger.info(String.format(" %d", c.getAvailab())) ;
-            logger.info(c.getDescr());
-        }}
+            for(Car c:carArrayList){
+                logger.info(c.getCar_name());
+                logger.info(String.format(" %d", c.getPrice()));
+                logger.info(String.format(" %d", c.getAvailab())) ;
+                logger.info(c.getDescr());
+            }}
         else{
             for(Car c:carArrayList){
                 logger.info(c.getCar_name());
@@ -219,7 +219,7 @@ public class MyAppT
     public boolean appear = false;
     public void updatesSuccessfully(String name,String pass){
         for(User u: up){
-            if(name.equals(u.getUser_name())){
+            if(name.equals(u.getUserName())){
                 u.setPass(pass);
                 updates = true;
                 break;
@@ -246,13 +246,13 @@ public class MyAppT
         }
     }
     public int checkPrice =0;
-   public void newPrice(String name, int newprice){
-       for(Car c: cp)
-       {
-           if((c.getCar_name()).equals(name)) {
-               c.setPrice(newprice);
-               checkPrice =1;
-           }
-       }
-   }
+    public void newPrice(String name, int newprice){
+        for(Car c: cp)
+        {
+            if((c.getCar_name()).equals(name)) {
+                c.setPrice(newprice);
+                checkPrice =1;
+            }
+        }
+    }
 }
