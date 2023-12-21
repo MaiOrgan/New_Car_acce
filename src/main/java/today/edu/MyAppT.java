@@ -177,7 +177,7 @@ public class MyAppT
         logger.info(String.format(" %d", cc.getAvailab())) ;
         logger.info(cc.getCategorie());
     }
-    public ArrayList<Car> carArrayList = new ArrayList<Car>();
+    public ArrayList<Car> carArrayList = new ArrayList<>();
     public void enterCategory(String categ){
         for(Car c: cp ){
             if(categ.equals(c.getCategorie())){
