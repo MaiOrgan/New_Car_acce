@@ -12,7 +12,7 @@ public class Main {
     static boolean cm= true;
     static boolean cm2=true;
     static public String genera;
-    static final string description = " || Description about it:- ";
+    static public string description = " || Description about it:- ";
     public static int exf(String ku,String p)
     {
         int l=0;
