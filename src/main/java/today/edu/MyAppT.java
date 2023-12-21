@@ -172,8 +172,8 @@ public class MyAppT
     }
     public void printCatalog(Car cc){
         logger.info(cc.getDescr());
-       System.out.println(cc.getPrice());
-        System.out.println(cc.getAvailab());
+        logger.info(String.format(" %d", cc.getPrice()));
+        logger.info(String.format(" %d", cc.getAvailab())) ;
         logger.info(cc.getCategorie());
     }
     public ArrayList<Car> carArrayList = new ArrayList<Car>();
@@ -188,15 +188,15 @@ public class MyAppT
         if(choose==1){
         for(Car c:carArrayList){
             logger.info(c.getCar_name());
-            System.out.println(c.getPrice());
-            System.out.println(c.getAvailab());
+            logger.info(String.format(" %d", c.getPrice()));
+            logger.info(String.format(" %d", c.getAvailab())) ;
             logger.info(c.getDescr());
         }}
         else{
             for(Car c:carArrayList){
                 logger.info(c.getCar_name());
                 logger.info(c.getCategorie());
-                System.out.println(c.getAvailab());
+                logger.info(String.format(" %d", c.getAvailab())) ;
                 logger.info(c.getDescr());
             }
         }
