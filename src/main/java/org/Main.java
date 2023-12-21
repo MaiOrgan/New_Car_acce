@@ -10,9 +10,9 @@ import java.util.logging.*;
 public class Main {
     private static final Logger logger =  Logger.getLogger(Main.class.getName());
     static MyAppT o = new MyAppT();
-    public static final  String description = " || Description about it:- ";
-    public static final  String names = " Name:- ";
-    public static final  String availables = " || The num of available pieces:- ";
+    public static final  String DESCRIPTION = " || Description about it:- ";
+    public static final  String NAMES = " Name:- ";
+    public static final  String AVAILABLES = " || The num of available pieces:- ";
     public static int exf(String ku,String p)
     {
         int l=0;
@@ -33,7 +33,7 @@ public class Main {
             if(name.equals(c.getCategorie() )){
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
-                logger.info(names+c.getCarName()+" || Price:- "+k+availables+f+description+c.getDescr());
+                logger.info(NAMES+c.getCarName()+" || Price:- "+k+AVAILABLES+f+DESCRIPTION+c.getDescr());
 
             }
         }
@@ -55,7 +55,7 @@ public class Main {
         for(Car c: o.cp ){
             if(p==c.getPrice() ){
                 String f=String.valueOf(c.getAvailab());
-                logger.info(names+c.getCarName()+" || Category:- "+c.getCategorie() +availables+f+description+c.getDescr());
+                logger.info(NAMES+c.getCarName()+" || Category:- "+c.getCategorie() +AVAILABLES+f+DESCRIPTION+c.getDescr());
                 l=1;
             }
             if(l==0)
@@ -111,7 +111,7 @@ public class Main {
         {
             String forp=String.valueOf(c.getPrice());
             String forp2=String.valueOf(c.getAvailab());
-            logger.info(names+c.getCarName()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+availables+forp2+description+c.getDescr());
+            logger.info(NAMES+c.getCarName()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+AVAILABLES+forp2+DESCRIPTION+c.getDescr());
         }
     }
     public static void adding(String u,String p,String bd)
