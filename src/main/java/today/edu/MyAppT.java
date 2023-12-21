@@ -37,8 +37,7 @@ public class MyAppT
         date.add("5-11-2023");
     }
     public void setUsernameAndPassAndPassFromSystem(String user_name, String pass) {
-        // Write code here that turns the phrase above into concrete actions
-        // throw new io.cucumber.java.PendingException();
+        
         for (User u: up) {
 
             if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
