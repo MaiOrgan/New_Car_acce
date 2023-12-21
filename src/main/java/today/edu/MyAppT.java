@@ -187,15 +187,15 @@ public class MyAppT
     public void printCarList(int choose){
         if(choose==1){
         for(Car c:carArrayList){
-            System.out.println(c.getCar_name());
+            logger.info(c.getCar_name());
             System.out.println(c.getPrice());
             System.out.println(c.getAvailab());
             logger.info(c.getDescr());
         }}
         else{
             for(Car c:carArrayList){
-                System.out.println(c.getCar_name());
-                System.out.println(c.getCategorie());
+                logger.info(c.getCar_name());
+                logger.info(c.getCategorie());
                 System.out.println(c.getAvailab());
                 logger.info(c.getDescr());
             }
