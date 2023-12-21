@@ -8,6 +8,7 @@ import today.edu.order;
 import java.util.Scanner;
 
 public class Main {
+    private static final string Sorry ="Sorry no choice as that ...";
     static MyAppT o = new MyAppT();
     static boolean cm= true;
     static boolean cm2=true;
@@ -238,7 +239,7 @@ public class Main {
                             }
                             else
                             {
-                                System.out.println("Sorry no choice as that ...");
+                                System.out.println(Sorry);
                                 System.out.println("Please repeat the process again... ");
                             }
                         }
@@ -291,7 +292,7 @@ public class Main {
                                 cm=corn();
                             }
                             else {
-                                System.out.println("Sorry no choice as that ...");
+                                System.out.println(Sorry);
                                 System.out.println("Please repeat the process again... ");
                             }
                         }
@@ -305,7 +306,7 @@ public class Main {
                             cm=corn();
                         }
                         else {
-                            System.out.println("Sorry no choice as that ...");
+                            System.out.println(Sorry);
                             System.out.println("Please repeat the process again... ");
                         }
                     }
