@@ -189,7 +189,7 @@ public class Main {
 
         switch (userId) {
             case 1 -> handleAdminActions(input);
-            case 2 -> System.out.println("This ID means that you are the INSTALLER so your permissions like that:-");
+            case 2 -> logger.info("This ID means that you are the INSTALLER so your permissions like that:-");
             case 3 -> handleCustomerActions(input);
             default -> logger.info("Invalid user ID.");
         }
