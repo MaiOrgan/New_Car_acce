@@ -125,6 +125,7 @@ public class Main {
     }
     public static boolean corn()
     {
+        System.out.println("Do you want to do anther thing ??!");
         Scanner input=new Scanner(System.in);
         boolean cm=true;
         String res = input.next();
@@ -209,7 +210,7 @@ public class Main {
                                 }
                                 else {
                                     System.out.println("Password has changed in successfully way");
-                                    System.out.println("Do you want to do anther thing ??!");
+                                   
                                     cm=corn();
                                 }
                             }
@@ -226,13 +227,13 @@ public class Main {
                                 String s333;
                                 s333=input.next();
                                 adding(s111, s211, s333);
-                                System.out.println("Do you want to do anther thing ??!");
+                                
                                 cm=corn();
                             }
                             else if(koiut==3)
                             {
                                 o.seeUser();
-                                System.out.println("Do you want to do anther thing ??!");
+                               
                                 cm=corn();
                             }
                             else
@@ -260,33 +261,33 @@ public class Main {
                                 System.out.println("write a discribtion about the product that you want to add");
                                 String de = input.next();
                                 o.theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(name, category, y, a, de);
-                                System.out.println("Do you want to do anther thing ??!");
+                               
                                 cm=corn();
                             } else if (k == 2) {
                                 cm = true;
                                 listting();
-                                System.out.println("Do you want to do anther thing ??!");
+                                
                                 cm=corn();
                             } else if (k == 3) {
                                 cm = true;
                                 System.out.println("Write the name of the product that you are searching on it??!");
                                 String name = input.next();
                                 o.iRequestInformationAboutSpecificProductByEnteringItsName(name);
-                                System.out.println("Do you want to do anther thing ??!");
+                               
                                 cm=corn();
                             } else if (k == 4) {
                                 cm = true;
                                 System.out.println("Write the category that your product that you are searching on it belong to it??!");
                                 String name = input.next();
                                 iRequestInformationAboutSpecificProductByEnteringItsName2(name);
-                                System.out.println("Do you want to do anther thing ??!");
+                                
                                 cm=corn();
                             } else if (k == 5) {
                                 cm = true;
                                 System.out.println("Write the price for the product that you are searching on");
                                 int kkk = input.nextInt();
                                 int j=iRequestInformationAboutSpecificProductByEnteringItsName22(kkk);
-                                System.out.println("Do you want to do anther thing ??!");
+                                
                                 cm=corn();
                             }
                             else {
@@ -300,7 +301,7 @@ public class Main {
                             String d=input.next();
                             o.date.add(d);
                             System.out.println("Done in Successfully way");
-                            System.out.println("Do you want to do anther thing ??!");
+                           
                             cm=corn();
                         }
                         else {
@@ -329,7 +330,7 @@ public class Main {
                             String fff = input.next();
                             int cv = Integer.parseInt(fff);
                             buying(h, klj, cv);
-                            System.out.println("Do you want to repeat this process ??!");
+                           
                             cm2 = corn();
                         }
                         else if(b==2)
@@ -339,7 +340,7 @@ public class Main {
                             int l=o.yourInformationUpdatesSuccessfully(genera,np);
                             if(l==1)
                                 System.out.println("done in successfully way");
-                            System.out.println("Do you want to repeat this process ??!");
+                            
                             cm2 = corn();
                         }
                         else if(b==3)
@@ -347,7 +348,7 @@ public class Main {
                             int ll=theInformationShouldAppear(genera);
                             if(ll==0)
                                 System.out.println("No previous orders");
-                            System.out.println("Do you want to repeat this process ??!");
+                            
                             cm2 = corn();
                         }
                     }
