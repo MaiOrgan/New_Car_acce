@@ -30,7 +30,7 @@ public class MyAppT
         cp.add(c2);
         User u3= new User("Fatina","1234","2\4\2004");
         up.add(u3);
-        order o1 = new order(u3.getUserName(), c2.getCar_name(), "20-10-2023");
+        order o1 = new order(u3.getUserName(), c2.getCarName(), "20-10-2023");
         op.add(o1);
         date.add("20-10-2023");
         date.add("22-10-2023");
@@ -83,7 +83,7 @@ public class MyAppT
 
     public void iRequestInformationAboutSpecificProductByEnteringItsName(String name) {
         for(Car c: cp ){
-            if(name.equals(c.getCar_name())){
+            if(name.equals(c.getCarName())){
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
 
@@ -163,7 +163,7 @@ public class MyAppT
             }
         }
         for(Car c : cp){
-            if (model.equals(c.getCar_name())){
+            if (model.equals(c.getCarName())){
                 available2 = true;
                 cname = model;
                 break;
@@ -180,21 +180,21 @@ public class MyAppT
     public void enterCategory(String categ){
         for(Car c: cp ){
             if(categ.equals(c.getCategorie())){
-                carArrayList.add(new Car(c.getCar_name(),c.getCategorie(),c.getPrice(),c.getAvailab(),c.getDescr()));
+                carArrayList.add(new Car(c.getCarName(),c.getCategorie(),c.getPrice(),c.getAvailab(),c.getDescr()));
             }
         }
     }
     public void printCarList(int choose){
         if(choose==1){
             for(Car c:carArrayList){
-                logger.info(c.getCar_name());
+                logger.info(c.getCarName());
                 logger.info(String.format(" %d", c.getPrice()));
                 logger.info(String.format(" %d", c.getAvailab())) ;
                 logger.info(c.getDescr());
             }}
         else{
             for(Car c:carArrayList){
-                logger.info(c.getCar_name());
+                logger.info(c.getCarName());
                 logger.info(c.getCategorie());
                 logger.info(String.format(" %d", c.getAvailab())) ;
                 logger.info(c.getDescr());
@@ -204,14 +204,14 @@ public class MyAppT
     public void requestByPrice(int price){
         for(Car c: cp ){
             if(price==c.getPrice()){
-                carArrayList.add(new Car(c.getCar_name(),c.getCategorie(),c.getPrice(),c.getAvailab(),c.getDescr()));
+                carArrayList.add(new Car(c.getCarName(),c.getCategorie(),c.getPrice(),c.getAvailab(),c.getDescr()));
             }
         }
     }
     public void filterPrice(int price1, int price2,String Categorie){
         for(Car c: cp){
             if(c.getPrice()>=price1 && c.getPrice()<=price2 && Categorie.equals(c.getCategorie())){
-                carArrayList.add(new Car(c.getCar_name(),c.getCategorie(),c.getPrice(),c.getAvailab(),c.getDescr()));
+                carArrayList.add(new Car(c.getCarName(),c.getCategorie(),c.getPrice(),c.getAvailab(),c.getDescr()));
             }
         }
     }
@@ -239,7 +239,7 @@ public class MyAppT
     public void addProduct(String name){
         for(Car c:cp)
         {
-            if ((c.getCar_name()).equals(name)) {
+            if ((c.getCarName()).equals(name)) {
                 exist = 1;
                 break;
             }
@@ -249,7 +249,7 @@ public class MyAppT
     public void newPrice(String name, int newprice){
         for(Car c: cp)
         {
-            if((c.getCar_name()).equals(name)) {
+            if((c.getCarName()).equals(name)) {
                 c.setPrice(newprice);
                 checkPrice =1;
             }
