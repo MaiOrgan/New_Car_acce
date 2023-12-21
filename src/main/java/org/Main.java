@@ -11,7 +11,6 @@ public class Main {
     static MyAppT o = new MyAppT();
     static boolean cm= true;
     static boolean cm2= true;
-    static public String genera;
     private static final String ACTION_1 = "|| Description about it:- "; 
     private static final String ACTION_2 = "Name:- ";
     private static final Logger logger = Logger.getLogger(Main.class.getName());
@@ -176,7 +175,6 @@ public class Main {
             logger.info("Enter the Gmail for your account");
             String s1;
             s1 = input.next();
-            genera=s1;
             logger.info("Enter the password for your account");
             String s2;
             s2 = input.next();
@@ -342,7 +340,7 @@ public class Main {
                         {
                             logger.info("enter the new password that you want to have it");
                             String np=input.next();
-                            int l=o.yourInformationUpdatesSuccessfully(genera,np);
+                            int l=o.yourInformationUpdatesSuccessfully(s1,np);
                             if(l==1)
                                logger.info("done in successfully way");
                             
@@ -350,7 +348,7 @@ public class Main {
                         }
                         else if(b==3)
                         {
-                            int ll=theInformationShouldAppear(genera);
+                            int ll=theInformationShouldAppear(s1);
                             if(ll==0)
                                 logger.info("No previous orders");
                             
