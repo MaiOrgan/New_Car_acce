@@ -6,7 +6,6 @@ import today.edu.Car;
 import today.edu.order;
 import java.util.Scanner;
 import java.util.logging.Logger;
-import java.util.logging.*;
 
 public class Main {
     private static final Logger logger = Logger.getLogger(Main.class.getName());
