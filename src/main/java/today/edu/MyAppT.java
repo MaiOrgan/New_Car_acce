@@ -13,7 +13,6 @@ public class MyAppT
     public ArrayList<car> cp = new ArrayList<car>();
     public ArrayList<order> op = new ArrayList<order>();
     public ArrayList<String>date = new ArrayList<String>();
-    private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
     public MyAppT()
     {
         User u1= new User("haya","123","7\3\2004");
@@ -101,7 +100,7 @@ public class MyAppT
     {
         for(User c:up)
         {
-           logger.info("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
+           System.out.println("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
         }
     }
     int yuy=0;
