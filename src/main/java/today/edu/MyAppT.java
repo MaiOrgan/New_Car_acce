@@ -153,7 +153,8 @@ public class MyAppT
             }
         }
     }
-    public String dateee , cname;
+    public String dateee ;
+    public String cname;
     public void fillModelAndDate(String model,String datee){
         for(String d: date){
             if (d.equals(datee)) {
