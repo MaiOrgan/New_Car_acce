@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class MyAppT
 {
-    private boolean isLogged=false;
+    public boolean isLogged=false;
     public boolean validation =false;
     public  boolean isInstallation=false;
     public boolean submit = false;
