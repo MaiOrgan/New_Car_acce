@@ -31,7 +31,7 @@ public class Main {
             if(name.equals(c.getCategorie() )){
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
-                logger.info("Name:- "+c.getCar_name()+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.getDescr());
+                logger.info("Name:- "+c.getCarName()+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.getDescr());
 
             }
         }
@@ -53,7 +53,7 @@ public class Main {
         for(Car c: o.cp ){
             if(p==c.getPrice() ){
                 String f=String.valueOf(c.getAvailab());
-                logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie() +" || The num of available pieces:- "+f+Description+c.getDescr());
+                logger.info("Name:- "+c.getCarName()+" || Category:- "+c.getCategorie() +" || The num of available pieces:- "+f+Description+c.getDescr());
                 l=1;
             }
             if(l==0)
@@ -73,7 +73,7 @@ public class Main {
         int indexm=0;
         int counterte=0;
         for(Car c : o.cp){
-            if (cn.equals(c.getCar_name())){
+            if (cn.equals(c.getCarName())){
                 a2=true;
                 indexm=counterte;
                 break;
@@ -109,7 +109,7 @@ public class Main {
         {
             String forp=String.valueOf(c.getPrice());
             String forp2=String.valueOf(c.getAvailab());
-            logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.getDescr());
+            logger.info("Name:- "+c.getCarName()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.getDescr());
         }
     }
     public static void adding(String u,String p,String bd)
