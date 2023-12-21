@@ -41,7 +41,7 @@ public class Installation {
     @And("submits the form")
     public void submitsTheForm() {
         obj.submit=true;
-        obj.op.add(new order(uname, cname,dateee));
+        obj.op.add(new Order(uname, cname,dateee));
     }
 
     @Then("the request should be successfully submitted if the date available")
