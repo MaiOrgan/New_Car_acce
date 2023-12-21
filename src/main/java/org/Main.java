@@ -62,11 +62,11 @@ public class Main {
         for(car c: o.cp ){
             if(p==c.price){
                 String f=String.valueOf(c.availab);
-                System.out.println(ACTION_2+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+ACTION_1+c.descr);
+                logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+ACTION_1+c.descr);
                 l=1;
             }
             if(l==0)
-                System.out.println("No product with this price in our company");
+               logger.info("No product with this price in our company");
         }
         return l;
     }
@@ -119,7 +119,7 @@ public class Main {
         {
             String forp=String.valueOf(c.price);
             String forp2=String.valueOf(c.availab);
-            System.out.println(ACTION_2+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+ACTION_1+c.descr);
+            logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+ACTION_1+c.descr);
         }
     }
     public static void adding(String u,String p,String bd)
@@ -129,11 +129,11 @@ public class Main {
         if(p.isEmpty())
             System.out.println("You can't creat account while your password is empty");
         o.up.add(new User(u,p,bd));
-        System.out.println("Your account created successfully ...");
+        logger.info("Your account created successfully ...");
     }
     public static boolean corn()
     {
-        System.out.println("Do you want to do anther thing ??!");
+        logger.info("Do you want to do anther thing ??!");
         Scanner input=new Scanner(System.in);
         boolean cm=true;
         String res = input.next();
@@ -145,7 +145,7 @@ public class Main {
         int a=0;
         for(order o : o.op){
             if(name.equals(o.Uname)){
-                System.out.println(o.Cname+"\t"+o.date);
+               logger.info(o.Cname+"\t"+o.date);
                 a=1;
             }
         }
