@@ -58,7 +58,12 @@ public class Main {
         for(Car c: o.cp ){
             if(p==c.getPrice() ){
                 String f=String.valueOf(c.getAvailab());
-                logger.info(NAMES+c.getCarName()+" || Category:- "+c.getCategorie() +AVAILABLES+f+DESCRIPTION+c.getDescr());
+                logger.info(NAMES);
+                logger.info(c.getCarName());
+                logger.info(" || Category:- "+c.getCategorie());
+                logger.info(AVAILABLES);
+                logger.info(f);
+                logger.info(DESCRIPTION+c.getDescr());
                 l=1;
             }
             if(l==0)
