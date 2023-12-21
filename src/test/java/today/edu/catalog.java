@@ -12,15 +12,15 @@ import static org.junit.Assert.assertTrue;
 public class catalog {
     public MyAppT obj;
     public boolean added = false;
-    public car cc=new car();
+    public Car cc=new Car();
     public String Categorie;
 
     public catalog(MyAppT iobj){
         super();
         this.obj = iobj;
-        car c1 = new car("motor","Interior",5000,1,"essintial part");
+        Car c1 = new Car("motor","Interior",5000,1,"essintial part");
         obj.cp.add(c1);
-        car c2 = new car("motor-v2","Interior",5000,100,"essintial part");
+        Car c2 = new Car("motor-v2","Interior",5000,100,"essintial part");
         obj.cp.add(c2);
     }
 
