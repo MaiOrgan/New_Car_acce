@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class Main {
     static MyAppT o = new MyAppT();
     static boolean cm= true;
-    static boolean cm2=true;
+    static boolean cm2= true;
     static public String genera;
     private static final String ACTION_1 = "|| Description about it:- "; 
     private static final String ACTION_2 = "Name:- ";
