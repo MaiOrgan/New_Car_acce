@@ -36,37 +36,37 @@ public class MyAppT
         date.add("22-10-2023");
         date.add("5-11-2023");
     }
-    public void setUsernameAndPassAndPassFromSystem(String user_name, String pass) {
+    public void setUsernameAndPassAndPassFromSystem(String Name, String pass) {
 
         for (User u: up) {
 
-            if (user_name.equals(u.getUserName()) && u.getPass().equals(pass)) {
+            if (Name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true;
 
                 logger.info("hi");
                 break;
             }}
     }
-    public void setInvalidUsernameAndPass(String user_name, String pass) {
+    public void setInvalidUsernameAndPass(String Name, String pass) {
         // Write code here that turns the phrase above into concrete actions
         for (User u: up) {
-            if (user_name.equals(u.getUserName()) && u.getPass().equals(pass)) {
+            if (Name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true; break;
             }
         }
     }
-    public void setValidUsernameAndInvalidPass(String user_name, String pass) {
+    public void setValidUsernameAndInvalidPass(String Name, String pass) {
         for (User u: up) {
-            if (user_name.equals(u.getUserName()) && u.getPass().equals(pass)) {
+            if (Name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true; break;
             }
         }
     }
-    public void setEmptyUsernameAndPass(String user_name, String pass) {
-        if (user_name.isEmpty())
+    public void setEmptyUsernameAndPass(String Name, String pass) {
+        if (Name.isEmpty())
             validation = false;
     }
-    public void setValidUsernameAndEmptyPass(String user_name, String pass) {
+    public void setValidUsernameAndEmptyPass(String Name, String pass) {
         if (pass.isEmpty())
             validation = false;
     }
