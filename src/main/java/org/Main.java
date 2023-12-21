@@ -26,6 +26,11 @@ public class Main {
         }
         return l;
     }
+    public static void printing ()
+    {
+        System.out.println("Sorry no choice as that ...");
+        System.out.println("Please repeat the process again... ");
+    }
     public static void iRequestInformationAboutSpecificProductByEnteringItsName2(String name) {
 
         for(car c: o.cp ){
@@ -238,8 +243,7 @@ public class Main {
                             }
                             else
                             {
-                                System.out.println("Sorry no choice as that ...");
-                                System.out.println("Please repeat the process again... ");
+                                printing();
                             }
                         }
                         else if(Role==2) {
@@ -291,8 +295,7 @@ public class Main {
                                 cm=corn();
                             }
                             else {
-                                System.out.println("Sorry no choice as that ...");
-                                System.out.println("Please repeat the process again... ");
+                                printing();
                             }
                         }
                         else if (Role==3)
@@ -305,8 +308,7 @@ public class Main {
                             cm=corn();
                         }
                         else {
-                            System.out.println("Sorry no choice as that ...");
-                            System.out.println("Please repeat the process again... ");
+                            printing();
                         }
                     }
                 }
