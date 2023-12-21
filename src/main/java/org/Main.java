@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 public class Main {
     static MyAppT o = new MyAppT();
     static final public String Description = " || Description about it:- ";
+    static final public String Name = " Name:- ";
     private static final Logger logger = Logger.getLogger(Main.class.getName());
     public static int exf(String ku,String p)
     {
@@ -31,7 +32,7 @@ public class Main {
             if(name.equals(c.categorie)){
                 String k=String.valueOf(c.price);
                 String f=String.valueOf(c.availab);
-                logger.info("Name:- "+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.descr);
+                logger.info(Name+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.descr);
 
             }
         }
@@ -53,7 +54,7 @@ public class Main {
         for(Car c: o.cp ){
             if(p==c.price){
                 String f=String.valueOf(c.availab);
-                System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+Description+c.descr);
+                System.out.println(Name+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+Description+c.descr);
                 l=1;
             }
             if(l==0)
@@ -109,7 +110,7 @@ public class Main {
         {
             String forp=String.valueOf(c.price);
             String forp2=String.valueOf(c.availab);
-           logger.info("Name:- "+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.descr);
+           logger.info(Name+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.descr);
         }
     }
     public static void adding(String u,String p,String bd)
