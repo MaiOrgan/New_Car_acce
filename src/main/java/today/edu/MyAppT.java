@@ -42,7 +42,7 @@ public class MyAppT
 
             if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
                 validation = true;
-                logger.info("hi");
+                System.out.println("hi");
                 break;
             }}
     }
@@ -84,7 +84,7 @@ public class MyAppT
 
     public void theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(String name, String categorie, int price, int ava, String desc) {
         cp.add(new car(name, categorie, price, ava, desc));
-        logger.info("You have added this product in a successfully way");
+        System.out.println("You have added this product in a successfully way");
     }
 
     public void iRequestInformationAboutSpecificProductByEnteringItsName(String name) {
@@ -92,7 +92,7 @@ public class MyAppT
             if(name.equals(c.car_name)){
                 String k=String.valueOf(c.price);
                 String f=String.valueOf(c.availab);
-                logger.info("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
+                System.out.println("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
             }
         }
     }
@@ -195,9 +195,9 @@ public class MyAppT
         if(choose==1){
         for(car c:carArrayList){
             System.out.println(c.getCar_name());
-            logger.info(c.getPrice());
-            logger.info(c.getAvailab());
-            logger.info(c.getDescr());
+            System.out.println(c.getPrice());
+            System.out.println(c.getAvailab());
+           System.out.println(c.getDescr());
         }}
         else{
             for(car c:carArrayList){
@@ -238,8 +238,8 @@ public class MyAppT
     public void appearInformation(String name){
         for(order o : op){
             if(name.equals(o.Uname)){
-               logger.info(o.Cname);
-               logger.info(o.date);
+              System.out.println(o.Cname);
+               System.out.println(o.date);
                 appear = true;
             }
         }
