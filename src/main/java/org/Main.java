@@ -5,7 +5,7 @@ import today.edu.User;
 import today.edu.Car;
 import today.edu.order;
 import java.util.Scanner;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 public class Main {
     private static final Logger logger = Logger.getLogger(Main.class.getName());
@@ -19,7 +19,7 @@ public class Main {
             if(ku.equals("-")||p.equals("-"))
                 l=3;
 
-            else if (ku.equals(u.getUser_name()) && u.getPass().equals(p)) {
+            else if (ku.equals(u.getUserName()) && u.getPass().equals(p)) {
                 l=1;
             }
         }
@@ -41,7 +41,7 @@ public class Main {
         int f=0;
         for(User c:o.up)
         {
-            if(c.user_name.equals(g)) {
+            if(c.userName.equals(g)) {
                 c.setPass(np);
                 f=1;
             }
@@ -53,7 +53,7 @@ public class Main {
         for(Car c: o.cp ){
             if(p==c.getPrice() ){
                 String f=String.valueOf(c.getAvailab());
-               logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie() +" || The num of available pieces:- "+f+Description+c.getDescr());
+                logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie() +" || The num of available pieces:- "+f+Description+c.getDescr());
                 l=1;
             }
             if(l==0)
@@ -62,8 +62,8 @@ public class Main {
     }
     public static void buying(String cn,String d,int r)
     {
-         boolean a1=false;
-         boolean a2=false;
+        boolean a1=false;
+        boolean a2=false;
         for(String dd: o.date) {
             if (dd.equals(d)) {
                 a1 = true;
@@ -80,10 +80,10 @@ public class Main {
             }
             counterte++;
         }
-       int fd= o.cp.get(indexm).getAvailab();
+        int fd= o.cp.get(indexm).getAvailab();
         if(!a1) {
 
-           logger.info("cant buy this product in this day sorry...");
+            logger.info("cant buy this product in this day sorry...");
         }
         else if (!a2) {
 
@@ -98,7 +98,7 @@ public class Main {
             int y= o.cp.get(indexm).getAvailab();
             y-=r;
             o.cp.get(indexm).setAvailab(y);
-           logger.info("Your installation has done in a successfully way...");
+            logger.info("Your installation has done in a successfully way...");
         }
 
     }
@@ -109,7 +109,7 @@ public class Main {
         {
             String forp=String.valueOf(c.getPrice());
             String forp2=String.valueOf(c.getAvailab());
-           logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.getDescr());
+            logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.getDescr());
         }
     }
     public static void adding(String u,String p,String bd)
