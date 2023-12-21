@@ -16,6 +16,7 @@ public class User
     public String getPass() {
         return pass;
     }
+    public String getB(){return birthDate;}
     public void setPass(String pass) {
         this.pass = pass;
     }
