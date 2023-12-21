@@ -171,10 +171,10 @@ public class MyAppT
         }
     }
     public void printCatalog(Car cc){
-        System.out.println(cc.getDescr());
+        logger.info(cc.getDescr());
         System.out.println(cc.getPrice());
         System.out.println(cc.getAvailab());
-        System.out.println(cc.getCategorie());
+        logger.info(cc.getCategorie());
     }
     public ArrayList<Car> carArrayList = new ArrayList<Car>();
     public void enterCategory(String categ){
