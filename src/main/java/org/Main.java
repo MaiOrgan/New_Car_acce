@@ -80,7 +80,7 @@ public class Main {
             }
             counterte++;
         }
-        int fd=o.cp.get(indexm).availab;
+       int fd= o.cp.get(indexm).getAvailab();
         if(!a1) {
 
            logger.info("cant buy this product in this day sorry...");
@@ -95,7 +95,7 @@ public class Main {
         }
         else {
 
-            int y=o.cp.get(indexm).availab;
+            int y= o.cp.get(indexm).getAvailab();
             y-=r;
             o.cp.get(indexm).setAvailab(y);
            logger.info("Your installation has done in a successfully way...");
