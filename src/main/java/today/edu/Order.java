@@ -1,13 +1,13 @@
 package today.edu;
 
 public class Order {
-    public String Uname;
-    public String Cname;
+    public String uname;
+    public String cname;
     public String date;
 
-    public Order(String Unamee, String Cnamee, String Datee){
-        Uname =  Unamee;
-        Cname = Cnamee;
-        date = Datee;
+    public Order(String unamee, String cnamee, String datee){
+        uname =  unamee;
+        cname = cnamee;
+        date = datee;
     }
 }
