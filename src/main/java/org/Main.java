@@ -6,7 +6,7 @@ import today.edu.car;
 import today.edu.order;
 
 import java.util.Scanner;
-
+import java.util.logging.Logger;
 public class Main {
     static MyAppT o = new MyAppT();
     static boolean cm= true;
@@ -14,6 +14,7 @@ public class Main {
     static public String genera;
     private static final String ACTION_1 = "|| Description about it:- "; 
     private static final String ACTION_2 = "Name:- ";
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
     public static int exf(String ku,String p)
     {
         int l=0;
@@ -152,7 +153,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("The menu of our programme like that:-");
+        logger.info( "The menu of our programme like that:-");
         System.out.println("1:sign up to make a new account");
         System.out.println("2:log in to your previous account");
         int n;
