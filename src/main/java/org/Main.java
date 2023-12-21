@@ -10,7 +10,7 @@ import java.util.logging.*;
 public class Main {
     private static final Logger logger = Logger.getLogger(Main.class.getName());
     static MyAppT o = new MyAppT();
-    static final public String Description = " || Description about it:- ";
+    public static final  String Description = " || Description about it:- ";
     public static int exf(String ku,String p)
     {
         int l=0;
