@@ -239,7 +239,7 @@ public class MyAppT
     public void addProduct(String name){
         for(Car c:cp)
         {
-            if (c.getCar_name().equals(name)) {
+            if ((c.getCar_name()).equals(name)) {
                 exist = 1;
                 break;
             }
@@ -249,7 +249,7 @@ public class MyAppT
    public void newPrice(String name, int newprice){
        for(Car c: cp)
        {
-           if(c.getCar_name().equals(name)) {
+           if((c.getCar_name()).equals(name)) {
                c.setPrice(newprice);
                checkPrice =1;
            }
