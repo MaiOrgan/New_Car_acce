@@ -33,7 +33,7 @@ public class Main {
             if(name.equals(c.getCategorie() )){
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
-                logger.info(String.format("Names: %s || Category: %s %s Description: %s", NAMES, c.getCarName(), AVAILABLES, c.getDescr()));
+                logger.info(NAMES+c.getCarName()+" || Price:- "+k+AVAILABLES+f+DESCRIPTION+c.getDescr());
             }
         }
     }
