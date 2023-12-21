@@ -1,20 +1,20 @@
 package today.edu;
 
-public class car {
+public class Car {
     public String car_name;
     public String categorie;
     public int price;
     public int availab;
     public String descr;
 
-    public car(String N, String C, int P,int A, String D){
+    public Car(String N, String C, int P,int A, String D){
         car_name=N;
         categorie=C;
         price=P;
         availab=A;
         descr=D;
     }
-    public car(){
+    public Car(){
         car_name="";
         categorie="";
         price=0;
