@@ -15,9 +15,9 @@ public class Installation {
         obj.up.add(u1);
         User u2= new User("Asma@gmail.com","1234","7\3\2004");
         obj.up.add(u2);
-        car c1 = new car("motor","Interior",5000,1,"essintial part");
+        Car c1 = new Car("motor","Interior",5000,1,"essintial part");
         obj.cp.add(c1);
-        car c2 = new car("motor-v2","Interior",5000,100,"essintial part");
+        Car c2 = new Car("motor-v2","Interior",5000,100,"essintial part");
         obj.cp.add(c2);
         c2.setAvailab(100);
     }
