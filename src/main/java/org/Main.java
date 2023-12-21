@@ -13,6 +13,7 @@ public class Main {
     static boolean cm2= true;
     private static final String ACTION_1 = "|| Description about it:- "; 
     private static final String ACTION_2 = "Name:- ";
+    private static final String ACTION_3 = " || The num of available pieces:- ";
     private static final Logger logger = Logger.getLogger(Main.class.getName());
     public static int exf(String ku,String p)
     {
@@ -35,14 +36,13 @@ public class Main {
     }
     public static void iRequestInformationAboutSpecificProductByEnteringItsName2(String name) {
 
-        for(car c: o.cp ){
-            if(name.equals(c.categorie)){
-                String k=String.valueOf(c.price);
-                String f=String.valueOf(c.availab);
-               logger.info(ACTION_2+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+ ACTION_1+c.descr);
-
-            }
+      for(car c: o.cp) {
+        if(name.equals(c.categorie)) {
+            String logMessage = String.format("%s%s || Price:- %s%s%s%s%s",
+                                              ACTION_2, c.car_name, c.price, ACTION_3, c.availab, ACTION_1, c.descr);
+            logger.info(logMessage);
         }
+       }
     }
     public static int changeInfo(String g,String np)
     {
@@ -61,7 +61,7 @@ public class Main {
         for(car c: o.cp ){
             if(p==c.price){
                 String f=String.valueOf(c.availab);
-                logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+ACTION_1+c.descr);
+                logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+ ACTION_3 +f+ACTION_1+c.descr);
                 l=1;
             }
             if(l==0)
@@ -118,7 +118,7 @@ public class Main {
         {
             String forp=String.valueOf(c.price);
             String forp2=String.valueOf(c.availab);
-            logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+ACTION_1+c.descr);
+            logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+ ACTION_3 +forp2+ACTION_1+c.descr);
         }
     }
     public static void adding(String u,String p,String bd)
