@@ -48,7 +48,7 @@ public class Main {
             if(name.equals(c.categorie)){
                 String k=String.valueOf(c.price);
                 String f=String.valueOf(c.availab);
-                System.out.println("Name:- "+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.descr);
+                logger.info("Name:- "+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.descr);
 
             }
         }
