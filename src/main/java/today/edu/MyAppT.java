@@ -1,6 +1,5 @@
 package today.edu;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 public class MyAppT
 {
     public boolean isLogged=false;
