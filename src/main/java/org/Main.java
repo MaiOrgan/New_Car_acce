@@ -8,7 +8,7 @@ import today.edu.order;
 import java.util.Scanner;
 
 public class Main {
-    static string Sorry ="Sorry no choice as that ...";
+    static public string Sorry ="Sorry no choice as that ...";
     static MyAppT o = new MyAppT();
     static boolean cm= true;
     static boolean cm2=true;
