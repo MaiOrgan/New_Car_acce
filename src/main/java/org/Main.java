@@ -15,7 +15,7 @@ public class Main {
     private static final String ACTION_2 = "Name:- ";
     private static final String ACTION_3 = " || The num of available pieces:- ";
     private static final Logger logger = Logger.getLogger(Main.class.getName());
-    public static int exf(String ku,String p)
+    public static int exf(String ku,String  p)
     {
         int l=0;
         for (User u: o.up)
