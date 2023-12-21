@@ -1,11 +1,11 @@
 package today.edu;
 
 public class Car {
-    public String carName;
-    public String categorie;
-    public int price;
-    public int availab;
-    public String descr;
+    private String carName;
+    private String categorie;
+    private int price;
+    private int availab;
+    private String descr;
 
     public Car(String n, String c, int p, int a, String d){
         carName =n;
