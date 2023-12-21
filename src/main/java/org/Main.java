@@ -3,7 +3,7 @@ package org;
 import today.edu.MyAppT;
 import today.edu.User;
 import today.edu.Car;
-import today.edu.order;
+import today.edu.Order;
 import java.util.Scanner;
 import java.util.logging.*;
 
@@ -123,7 +123,7 @@ public class Main {
     }
     public static int theInformationShouldAppear(String name) {
         int a=0;
-        for(order o : o.op){
+        for(Order o : o.op){
             if(name.equals(o.Uname)){
                 logger.info(o.Cname+"\t"+o.date);
                 a=1;
