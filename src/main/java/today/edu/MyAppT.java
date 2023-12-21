@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 public class MyAppT
 {
-    public boolean isLogged= false;
+    public boolean isLogged=false;
     public boolean validation =false;
     public  boolean isInstallation=false;
     public boolean submit = false;
@@ -13,6 +13,7 @@ public class MyAppT
     public ArrayList<car> cp = new ArrayList<car>();
     public ArrayList<order> op = new ArrayList<order>();
     public ArrayList<String>date = new ArrayList<String>();
+
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
     public MyAppT()
     {
@@ -34,7 +35,6 @@ public class MyAppT
         date.add("22-10-2023");
         date.add("5-11-2023");
     }
-
     public void setUsernameAndPassAndPassFromSystem(String user_name, String pass) {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
@@ -42,6 +42,7 @@ public class MyAppT
 
             if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
                 validation = true;
+                ;System.out.println("hi");
                 logger.info("hi");
                 break;
             }}
@@ -49,7 +50,6 @@ public class MyAppT
     public void setInvalidUsernameAndPass(String user_name, String pass) {
         // Write code here that turns the phrase above into concrete actions
         for (User u: up) {
-
             if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
                 validation = true; break;
             }
@@ -57,33 +57,27 @@ public class MyAppT
     }
     public void setValidUsernameAndInvalidPass(String user_name, String pass) {
         for (User u: up) {
-
             if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
                 validation = true; break;
             }
         }
-
     }
     public void setEmptyUsernameAndPass(String user_name, String pass) {
-
         if (user_name.isEmpty())
             validation = false;
-
     }
     public void setValidUsernameAndEmptyPass(String user_name, String pass) {
-
         if (pass.isEmpty())
             validation = false;
-
     }
     public void iAmNotInSystem(MyAppT obj)
     {
         obj.isLogged=false;
-
     }
 
     public void theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(String name, String categorie, int price, int ava, String desc) {
         cp.add(new car(name, categorie, price, ava, desc));
+        System.out.println("You have added this product in a successfully way");
         logger.info("You have added this product in a successfully way");
     }
 
@@ -92,15 +86,16 @@ public class MyAppT
             if(name.equals(c.car_name)){
                 String k=String.valueOf(c.price);
                 String f=String.valueOf(c.availab);
-               logger.info("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
+                System.out.println("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
+                logger.info("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
             }
         }
     }
-
     public void seeUser()
     {
         for(User c:up)
         {
+            System.out.println("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
            logger.info("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
         }
     }
@@ -150,7 +145,6 @@ public class MyAppT
             }
         }
     }
-
     public void setNamePass(String user_name, String pass){
         for (User u: up) {
             if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
@@ -159,7 +153,6 @@ public class MyAppT
             }
         }
     }
-
     public String dateee , cname;
     public void fillModelAndDate(String model,String datee){
         for(String d: date){
@@ -197,12 +190,12 @@ public class MyAppT
             System.out.println(c.getCar_name());
             System.out.println(c.getPrice());
             System.out.println(c.getAvailab());
-           System.out.println(c.getDescr());
+            System.out.println(c.getDescr());
         }}
         else{
             for(car c:carArrayList){
-               System.out,println(c.getCar_name());
-               System.out.println(c.getCategorie());
+                System.out.println(c.getCar_name());
+                System.out.println(c.getCategorie());
                 System.out.println(c.getAvailab());
                 System.out.println(c.getDescr());
             }
@@ -215,7 +208,6 @@ public class MyAppT
             }
         }
     }
-
     public void filterPrice(int price1, int price2,String Categorie){
         for(car c: cp){
             if(c.price>=price1 && c.price<=price2 && Categorie.equals(c.categorie)){
@@ -223,7 +215,6 @@ public class MyAppT
             }
         }
     }
-
     public boolean updates = false;
     public boolean appear = false;
     public void updatesSuccessfully(String name,String pass){
@@ -238,8 +229,8 @@ public class MyAppT
     public void appearInformation(String name){
         for(order o : op){
             if(name.equals(o.Uname)){
-              System.out.println(o.Cname);
-               System.out.println(o.date);
+                System.out.println(o.Cname);
+                System.out.println(o.date);
                 appear = true;
             }
         }
@@ -264,6 +255,4 @@ public class MyAppT
            }
        }
    }
-
-
 }
