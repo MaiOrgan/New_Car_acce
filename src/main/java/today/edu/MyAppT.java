@@ -96,7 +96,7 @@ public class MyAppT
         for(User c:up)
         {
 
-            logger.info("Gmail:- "+c.userName +"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.birthDate);
+            logger.info("Gmail:- "+c.getUserName() +"\t"+"Password:- "+c.getPass()+"\t"+"BirthDate:- "+c.birthDate);
         }
     }
     int yuy=0;
