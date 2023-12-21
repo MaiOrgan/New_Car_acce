@@ -42,7 +42,7 @@ public class MyAppT
 
             if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
                 validation = true;
-                ;System.out.println("hi");
+                
                 logger.info("hi");
                 break;
             }}
@@ -77,7 +77,7 @@ public class MyAppT
 
     public void theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(String name, String categorie, int price, int ava, String desc) {
         cp.add(new car(name, categorie, price, ava, desc));
-        System.out.println("You have added this product in a successfully way");
+        
         logger.info("You have added this product in a successfully way");
     }
 
@@ -86,7 +86,7 @@ public class MyAppT
             if(name.equals(c.car_name)){
                 String k=String.valueOf(c.price);
                 String f=String.valueOf(c.availab);
-                System.out.println("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
+                
                 logger.info("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
             }
         }
@@ -95,7 +95,7 @@ public class MyAppT
     {
         for(User c:up)
         {
-            System.out.println("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
+            
            logger.info("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
         }
     }
