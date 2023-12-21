@@ -16,9 +16,9 @@ public class AdminDash {
     {
         super();
         this.obj=iobj;
-        car c1 = new car("motor","Interior",5000,1,"essintial part");
+        Car c1 = new Car("motor","Interior",5000,1,"essintial part");
         obj.cp.add(c1);
-        car c2 = new car("motor-v2","Interior",5000,100,"essintial part");
+        Car c2 = new Car("motor-v2","Interior",5000,100,"essintial part");
         obj.cp.add(c2);
     }
     @When("the name is {string} and the category is {string} and the price is {int} and the num of av p is {int} and the discription is {string}")
