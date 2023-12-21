@@ -294,7 +294,7 @@ return l;
                                 cm = true;
                                 logger.info("Write the price for the product that you are searching on");
                                 int kkk = input.nextInt();
-                                int j=iRequestInformationAboutSpecificProductByEnteringItsName22(kkk);
+                                iRequestInformationAboutSpecificProductByEnteringItsName22(kkk);
                                 
                                 cm=corn();
                             }
