@@ -115,7 +115,7 @@ public class Main {
             int y=o.cp.get(indexm).availab;
             y-=r;
             o.cp.get(indexm).setAvailab(y);
-            System.out.println("Your installation has done in a successfully way...");
+           logger.info("Your installation has done in a successfully way...");
         }
 
     }
@@ -126,23 +126,23 @@ public class Main {
         {
             String forp=String.valueOf(c.price);
             String forp2=String.valueOf(c.availab);
-            System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.descr);
+           logger.info("Name:- "+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.descr);
         }
     }
     public static void adding(String u,String p,String bd)
     {
         if(u.isEmpty())
-            System.out.println("You can't creat account while your name is empty");
+            logger.info("You can't creat account while your name is empty");
         if(p.isEmpty())
-            System.out.println("You can't creat account while your password is empty");
+            logger.info("You can't creat account while your password is empty");
         o.up.add(new User(u,p,bd));
-        System.out.println("Your account created successfully ...");
+        logger.info("Your account created successfully ...");
     }
     public static int theInformationShouldAppear(String name) {
         int a=0;
         for(order o : o.op){
             if(name.equals(o.Uname)){
-                System.out.println(o.Cname+"\t"+o.date);
+                logger.info(o.Cname+"\t"+o.date);
                 a=1;
             }
         }
