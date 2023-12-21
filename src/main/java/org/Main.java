@@ -10,22 +10,6 @@ import java.util.logging.*;
 
 public class Main {
     private static final Logger logger = Logger.getLogger(Main.class.getName());
-    static {
-        Handler consoleHandler = new ConsoleHandler();
-        consoleHandler.setFormatter(new Formatter() {
-            @Override
-            public String format(LogRecord record) {
-                return record.getLevel() + ": " + record.getMessage() + "\n";
-            }
-        });
-        logger.addHandler(consoleHandler);
-        logger.setLevel(Level.ALL);
-        Logger rootLogger = Logger.getLogger("");
-        Handler[] handlers = rootLogger.getHandlers();
-        if (handlers[0] instanceof ConsoleHandler) {
-            rootLogger.removeHandler(handlers[0]);
-        }
-    }
     static MyAppT o = new MyAppT();
     static final public String Description = " || Description about it:- ";
     public static int exf(String ku,String p)
