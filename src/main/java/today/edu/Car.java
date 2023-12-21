@@ -1,21 +1,21 @@
 package today.edu;
 
 public class Car {
-    private String car_name;
-    private String categorie;
-    private int price;
-    private int availab;
-    private String descr;
+    public String carName;
+    public String categorie;
+    public int price;
+    public int availab;
+    public String descr;
 
-    public Car(String N, String C, int P,int A, String D){
-        car_name=N;
+    public Car(String N, String C, int P, int A, String D){
+        carName =N;
         categorie=C;
         price=P;
         availab=A;
         descr=D;
     }
     public Car(){
-        car_name="";
+        carName ="";
         categorie="";
         price=0;
         availab=0;
@@ -30,8 +30,8 @@ public class Car {
         return availab;
     }
 
-    public String getCar_name() {
-        return car_name;
+    public String getCarName() {
+        return carName;
     }
 
     public String getCategorie() {
@@ -42,11 +42,8 @@ public class Car {
         return descr;
     }
 
-    public void setAvailab(int availab) {
+   public void setAvailab(int availab) {
         this.availab = availab;
-    }
-    public void setName(String car_name) {
-        this.car_name = car_name;
     }
 
     public void setPrice(int price) {
