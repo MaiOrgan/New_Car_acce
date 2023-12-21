@@ -7,12 +7,12 @@ public class Car {
     public int availab;
     public String descr;
 
-    public Car(String N, String C, int P, int A, String D){
-        carName =N;
-        categorie=C;
-        price=P;
-        availab=A;
-        descr=D;
+    public Car(String n, String c, int p, int a, String d){
+        carName =n;
+        categorie=c;
+        price=p;
+        availab=a;
+        descr=d;
     }
     public Car(){
         carName ="";
