@@ -10,10 +10,10 @@ public class MyAppT
     public boolean submit = false;
     public boolean available1 = false;
     public boolean available2 = false;
-    public  ArrayList<User> up=new  ArrayList<User>();
-    public  ArrayList<Car> cp = new  ArrayList<Car>();
-    public  ArrayList<order> op = new  ArrayList<order>();
-    public  ArrayList<String>date = new  ArrayList<String>();
+    public  List<User> up=new  ArrayList<User>();
+    public  List<Car> cp = new  ArrayList<Car>();
+    public  List<order> op = new  ArrayList<order>();
+    public  List<String>date = new  ArrayList<String>();
 
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
     public MyAppT()
