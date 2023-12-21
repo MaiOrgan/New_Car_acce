@@ -1,9 +1,9 @@
 package today.edu;
 public class User
 {
-    public  String userName;
-    public  String pass;
-    public String birthDate;
+    private  String userName;
+    private  String pass;
+    private String birthDate;
 
     public User(String un, String pa,String bd) {
         userName =un;
