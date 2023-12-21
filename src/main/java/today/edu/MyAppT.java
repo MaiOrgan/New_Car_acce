@@ -1,5 +1,6 @@
 package today.edu;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 public class MyAppT
 {
@@ -11,7 +12,7 @@ public class MyAppT
     public boolean available2 = false;
     public  ArrayList<User> up=new  ArrayList<User>();
     public  ArrayList<Car> cp = new  ArrayList<Car>();
-    public  ArrayList<order> op = new  ArrayList<order>();
+    public  List<order> op = new  List<order>();
     public  ArrayList<String>date = new  ArrayList<String>();
 
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
