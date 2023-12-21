@@ -12,6 +12,7 @@ public class Main {
     static boolean cm= true;
     static boolean cm2=true;
     static public String genera;
+    private static final String ACTION_1 = "action1"; 
     public static int exf(String ku,String p)
     {
         int l=0;
@@ -37,7 +38,7 @@ public class Main {
             if(name.equals(c.categorie)){
                 String k=String.valueOf(c.price);
                 String f=String.valueOf(c.availab);
-                System.out.println("Name:- "+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+ "|| Description about it:- "+c.descr);
+                System.out.println("Name:- "+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+ ACTION_1+c.descr);
 
             }
         }
@@ -59,7 +60,7 @@ public class Main {
         for(car c: o.cp ){
             if(p==c.price){
                 String f=String.valueOf(c.availab);
-                System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+" || Description about it:- "+c.descr);
+                System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+ACTION_1+c.descr);
                 l=1;
             }
             if(l==0)
@@ -116,7 +117,7 @@ public class Main {
         {
             String forp=String.valueOf(c.price);
             String forp2=String.valueOf(c.availab);
-            System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+" || Description about it:- "+c.descr);
+            System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+ACTION_1+c.descr);
         }
     }
     public static void adding(String u,String p,String bd)
