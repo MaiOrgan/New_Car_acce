@@ -124,8 +124,8 @@ public class Main {
     public static int theInformationShouldAppear(String name) {
         int a=0;
         for(Order o : o.op){
-            if(name.equals(o.Uname)){
-                logger.info(o.Cname+"\t"+o.date);
+            if(name.equals(o.uname)){
+                logger.info(o.cname+"\t"+o.date);
                 a=1;
             }
         }
