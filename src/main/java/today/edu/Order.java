@@ -6,7 +6,7 @@ public class Order {
     public String date;
 
     public Order(String uname, String cname, String datee){
-        Uname = uname;
+        Uname =  uname;
         Cname = cname;
         date = datee;
     }
