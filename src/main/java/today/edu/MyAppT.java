@@ -12,7 +12,7 @@ public class MyAppT
     public boolean available2 = false;
     public  ArrayList<User> up=new  ArrayList<User>();
     public  ArrayList<Car> cp = new  ArrayList<Car>();
-    public  List<order> op = new  List<order>();
+    public  ArrayList<order> op = new  ArrayList<order>();
     public  ArrayList<String>date = new  ArrayList<String>();
 
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
