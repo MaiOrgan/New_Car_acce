@@ -12,7 +12,7 @@ public class MyAppT
     public boolean available2 = false;
     public  List<User> up=new  ArrayList<User>();
     public  List<Car> cp = new  ArrayList<Car>();
-    public  List<order> op = new  ArrayList<order>();
+    public  List<Order> op = new  ArrayList<Order>();
     public  List<String>date = new  ArrayList<String>();
 
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
@@ -30,7 +30,7 @@ public class MyAppT
         cp.add(c2);
         User u3= new User("Fatina","1234","2\4\2004");
         up.add(u3);
-        order o1 = new order(u3.getUserName(), c2.getCarName(), "20-10-2023");
+        Order o1 = new Order(u3.getUserName(), c2.getCarName(), "20-10-2023");
         op.add(o1);
         date.add("20-10-2023");
         date.add("22-10-2023");
@@ -227,7 +227,7 @@ public class MyAppT
         }
     }
     public void appearInformation(String name){
-        for(order o : op){
+        for(Order o : op){
             if(name.equals(o.Uname)){
                 logger.info(o.Cname);
                 logger.info(o.date);
