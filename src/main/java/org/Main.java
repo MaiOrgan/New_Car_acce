@@ -41,7 +41,7 @@ public class Main {
         int f=0;
         for(User c:o.up)
         {
-            if(c.userName.equals(g)) {
+            if(c.getUserName().equals(g)) {
                 c.setPass(np);
                 f=1;
             }
