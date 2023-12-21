@@ -57,17 +57,19 @@ public class Main {
         return f;
     }
     public static int iRequestInformationAboutSpecificProductByEnteringItsName22(int p) {
-        int l=0;
-        for(Car c: o.cp ){
-            if(p==c.price){
-                String f=String.valueOf(c.availab);
-                logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+ ACTION_3 +f+ACTION_1+c.descr);
-                l=1;
+        int l = 0;
+        for (Car c : o.cp) {
+            if (p == c.price) {
+                String logMessage = String.format("%s%s || Category:- %s%s%s%s%s",
+                                                  ACTION_2, c.car_name, c.categorie, ACTION_3, c.availab, ACTION_1, c.descr);
+                logger.info(logMessage);
+                l = 1;
             }
-            if(l==0)
-               logger.info("No product with this price in our company");
         }
-        return l;
+    if (l == 0) {
+        logger.info("No product with this price in our company");
+}
+return l;
     }
     public static void buying(String cn,String d,int r)
     {
@@ -114,12 +116,12 @@ public class Main {
 
     public static void listting()
     {
-        for(Car c:o.cp)
-        {
-            String forp=String.valueOf(c.price);
-            String forp2=String.valueOf(c.availab);
-            logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+ ACTION_3 +forp2+ACTION_1+c.descr);
-        }
+       for(Car c : o.cp) {
+        String logMessage = String.format("%s%s || Category:- %s || Price:- %s%s%s%s%s",
+                                          ACTION_2, c.car_name, c.categorie, c.price, ACTION_3, c.availab, ACTION_1, c.descr);
+        logger.info(logMessage);
+    }
+
     }
     public static void adding(String u,String p,String bd)
     {
