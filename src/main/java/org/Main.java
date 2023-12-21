@@ -189,35 +189,35 @@ public class Main {
                 logger.info("There's something wrong there's no account with this information");
             else
             {
-                System.out.println("you have logged successfully");
-                System.out.println("Now in order to see your permissions you have to enter the specific id for your position");
+                logger.info("you have logged successfully");
+                logger.info("Now in order to see your permissions you have to enter the specific id for your position");
                 int m=input.nextInt();
                 if(m==1) {
-                    System.out.println("This ID means that you are the ADMIN so your permissions like that:-");
+                    logger.info("This ID means that you are the ADMIN so your permissions like that:-");
                     while (cm)
                     {
-                        System.out.println("1:-You can manage user account");
-                        System.out.println("2:-You can manage the products in the company");
+                        logger.info("1:-You can manage user account");
+                        logger.info("2:-You can manage the products in the company");
                         int Role=input.nextInt();
                         if(Role==1)
                         {
-                            System.out.println("1:- Change information for previous users");
-                            System.out.println("2:- adding new user");
-                            System.out.println("3:- See all user accounts");
+                            logger.info("1:- Change information for previous users");
+                            logger.info("2:- adding new user");
+                            logger.info("3:- See all user accounts");
                             int koiut = input.nextInt();
                             if(koiut==1)
                             {
-                                System.out.println("You can change the password for account by giving its gmail");
+                                logger.info("You can change the password for account by giving its gmail");
                                 String mg=input.next();
-                                System.out.println("Write the new password for the email");
+                                logger.info("Write the new password for the email");
                                 String npp=input.next();
                                 int f=changeInfo(mg,npp);
                                 if(f==0)
                                 {
-                                    System.out.println("No account founded with this gmail");
+                                    logger.info("No account founded with this gmail");
                                 }
                                 else {
-                                    System.out.println("Password has changed in successfully way");
+                                    logger.info("Password has changed in successfully way");
                                    
                                     cm=corn();
                                 }
@@ -225,13 +225,13 @@ public class Main {
                             else if(koiut==2)
                             {
                                 cm=true;
-                                System.out.println("Please enter the Gmail for the account that you want to creat it ");
+                                logger.info("Please enter the Gmail for the account that you want to creat it ");
                                 String s111;
                                 s111 = input.next();
-                                System.out.println("Please enter the password for the account that you want to creat it ");
+                                logger.info("Please enter the password for the account that you want to creat it ");
                                 String s211;
                                 s211 = input.next();
-                                System.out.println("Please enter the BirthDate for the user that you want to make account for him");
+                                logger.info("Please enter the BirthDate for the user that you want to make account for him");
                                 String s333;
                                 s333=input.next();
                                 adding(s111, s211, s333);
@@ -250,22 +250,22 @@ public class Main {
                             }
                         }
                         else if(Role==2) {
-                            System.out.println("1:- Add a new product .");
-                            System.out.println("2:- Make a list for all the products in the company .");
-                            System.out.println("3:- Search on a product by entering it's name .");
-                            System.out.println("4:- Search on a product by entering it's category .");
-                            System.out.println("5:- Search on a product by entering it's price .");
+                            logger.info("1:- Add a new product .");
+                            logger.info("2:- Make a list for all the products in the company .");
+                            logger.info("3:- Search on a product by entering it's name .");
+                            logger.info("4:- Search on a product by entering it's category .");
+                            logger.info("5:- Search on a product by entering it's price .");
                             int k = input.nextInt();
                             if (k == 1) {
-                                System.out.println("Enter the name of the product that you want to add");
+                                logger.info("Enter the name of the product that you want to add");
                                 String name = input.next();
-                                System.out.println("Enter the category's name that your product belong to");
+                                logger.info("Enter the category's name that your product belong to");
                                 String category = input.next();
-                                System.out.println("Enter the price of the product that you want to add");
+                                logger.info("Enter the price of the product that you want to add");
                                 int y = input.nextInt();
-                                System.out.println("Enter how many pieces from this product you want to add");
+                                logger.info("Enter how many pieces from this product you want to add");
                                 int a = input.nextInt();
-                                System.out.println("write a discribtion about the product that you want to add");
+                                logger.info("write a discribtion about the product that you want to add");
                                 String de = input.next();
                                 o.theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(name, category, y, a, de);
                                
@@ -277,7 +277,7 @@ public class Main {
                                 cm=corn();
                             } else if (k == 3) {
                                 cm = true;
-                                System.out.println("Write the name of the product that you are searching on it??!");
+                                logger.info("Write the name of the product that you are searching on it??!");
                                 String name = input.next();
                                 o.iRequestInformationAboutSpecificProductByEnteringItsName(name);
                                
