@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.logging.Logger;
 public class MyAppT
 {
-    public boolean isLogged= false;
-    public boolean validation =false;
+    public boolean isLogged;
+    public boolean validation;
     public  boolean isInstallation=false;
     public boolean submit = false;
     public boolean available1 = false;
