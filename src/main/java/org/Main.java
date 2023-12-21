@@ -51,7 +51,7 @@ public class Main {
     public static void iRequestInformationAboutSpecificProductByEnteringItsName22(int p) {
         int l=0;
         for(Car c: o.cp ){
-            if(p==c.price){
+            if(p==c.getPrice() ){
                 String f=String.valueOf(c.getAvailab());
                logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie() +" || The num of available pieces:- "+f+Description+c.getDescr());
                 l=1;
