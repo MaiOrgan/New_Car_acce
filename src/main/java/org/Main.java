@@ -4,8 +4,6 @@ import today.edu.MyAppT;
 import today.edu.User;
 import today.edu.Car;
 import today.edu.Order;
-
-import java.text.MessageFormat;
 import java.util.Scanner;
 import java.util.logging.*;
 
@@ -35,8 +33,7 @@ public class Main {
             if(name.equals(c.getCategorie() )){
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
-                logger.info(MessageFormat.format("Names: {0} || Category: {1} {2} Description: {3}",
-                        NAMES, c.getCarName(), AVAILABLES, c.getDescr()));
+                logger.info(NAMES+c.getCarName()+" || Category:- "+c.getCategorie() +AVAILABLES+f+DESCRIPTION+c.getDescr());
             }
         }
     }
