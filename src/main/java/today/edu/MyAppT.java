@@ -13,7 +13,7 @@ public class MyAppT
     public  List<User> up=new  ArrayList<User>();
     public  List<Car> cp = new  ArrayList<Car>();
     public  List<Order> op = new  ArrayList<Order>();
-    public  List<String>date = new  ArrayList<String>();
+    public  List<String>date = new  ArrayList<>();
 
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
     public MyAppT()
