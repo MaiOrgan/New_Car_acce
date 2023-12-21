@@ -10,7 +10,7 @@ import java.util.logging.*;
 public class Main {
     private static final Logger logger =  Logger.getLogger(Main.class.getName());
     static MyAppT o = new MyAppT();
-    public static final  String Description = " || Description about it:- ";
+    public static final  String description = " || Description about it:- ";
     public static int exf(String ku,String p)
     {
         int l=0;
@@ -31,7 +31,7 @@ public class Main {
             if(name.equals(c.getCategorie() )){
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
-                logger.info("Name:- "+c.getCarName()+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.getDescr());
+                logger.info("Name:- "+c.getCarName()+" || Price:- "+k+" || The num of available pieces:- "+f+description+c.getDescr());
 
             }
         }
@@ -53,7 +53,7 @@ public class Main {
         for(Car c: o.cp ){
             if(p==c.getPrice() ){
                 String f=String.valueOf(c.getAvailab());
-                logger.info("Name:- "+c.getCarName()+" || Category:- "+c.getCategorie() +" || The num of available pieces:- "+f+Description+c.getDescr());
+                logger.info("Name:- "+c.getCarName()+" || Category:- "+c.getCategorie() +" || The num of available pieces:- "+f+description+c.getDescr());
                 l=1;
             }
             if(l==0)
@@ -109,7 +109,7 @@ public class Main {
         {
             String forp=String.valueOf(c.getPrice());
             String forp2=String.valueOf(c.getAvailab());
-            logger.info("Name:- "+c.getCarName()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.getDescr());
+            logger.info("Name:- "+c.getCarName()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+" || The num of available pieces:- "+forp2+description+c.getDescr());
         }
     }
     public static void adding(String u,String p,String bd)
