@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
     static MyAppT o = new MyAppT();
-    static boolean cm=true;
+    static boolean cm= true;
     static boolean cm2=true;
     static public String genera;
     static final public String Description = " || Description about it:- ";
