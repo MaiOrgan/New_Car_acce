@@ -28,10 +28,10 @@ public class Main {
     public static void iRequestInformationAboutSpecificProductByEnteringItsName2(String name) {
 
         for(Car c: o.cp ){
-            if(name.equals(c.categorie)){
-                String k=String.valueOf(c.price);
-                String f=String.valueOf(c.availab);
-                logger.info("Name:- "+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.descr);
+            if(name.equals(c.getCategorie() )){
+                String k=String.valueOf(c.getPrice());
+                String f=String.valueOf(c.getAvailab());
+                logger.info("Name:- "+c.getCar_name()+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.getDescr());
 
             }
         }
@@ -52,8 +52,8 @@ public class Main {
         int l=0;
         for(Car c: o.cp ){
             if(p==c.price){
-                String f=String.valueOf(c.availab);
-               logger.info("Name:- "+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+Description+c.descr);
+                String f=String.valueOf(c.getAvailab());
+               logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie() +" || The num of available pieces:- "+f+Description+c.getDescr());
                 l=1;
             }
             if(l==0)
@@ -73,7 +73,7 @@ public class Main {
         int indexm=0;
         int counterte=0;
         for(Car c : o.cp){
-            if (cn.equals(c.car_name)){
+            if (cn.equals(c.getCar_name())){
                 a2=true;
                 indexm=counterte;
                 break;
@@ -107,9 +107,9 @@ public class Main {
     {
         for(Car c:o.cp)
         {
-            String forp=String.valueOf(c.price);
-            String forp2=String.valueOf(c.availab);
-           logger.info("Name:- "+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.descr);
+            String forp=String.valueOf(c.getPrice());
+            String forp2=String.valueOf(c.getAvailab());
+           logger.info("Name:- "+c.getCar_name()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.getDescr());
         }
     }
     public static void adding(String u,String p,String bd)
