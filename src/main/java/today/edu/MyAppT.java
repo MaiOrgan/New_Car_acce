@@ -23,9 +23,9 @@ public class MyAppT
         up.add(u2);
         this.isLogged = false;
         this.validation = false;
-        Car c1 = new car("motor","Interior",5000,1,"essintial part");
+        Car c1 = new Car("motor","Interior",5000,1,"essintial part");
         cp.add(c1);
-        Car c2 = new car("motor-v2","Interior",5000,100,"essintial part");
+        Car c2 = new Car("motor-v2","Interior",5000,100,"essintial part");
         cp.add(c2);
         User u3= new User("Fatina","1234","2\4\2004");
         up.add(u3);
