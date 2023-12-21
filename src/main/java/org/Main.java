@@ -92,11 +92,11 @@ return l;
             counterte++;
         }
         int fd=o.cp.get(indexm).availab;
-        if(a1==false) {
+        if(!a1) {
 
            logger.info("cant buy this product in this day sorry...");
         }
-        else if (a2==false) {
+        else if (!a2) {
 
             logger.info("There is no product with this name in our company sorry...");
         }
@@ -143,11 +143,12 @@ return l;
         return cm;
     }
     public static int theInformationShouldAppear(String name) {
-        int a=0;
+        int a = 0;
         for(order o : o.op){
             if(name.equals(o.Uname)){
-               logger.info(o.Cname+"\t"+o.date);
-                a=1;
+                String logMessage = String.format("%s\t%s", o.Cname, o.date);
+                logger.info(logMessage);
+                a = 1;
             }
         }
         return a;
