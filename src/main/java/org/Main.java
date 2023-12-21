@@ -117,9 +117,12 @@ public class Main {
     {
         for(Car c:o.cp)
         {
-            String forp=String.valueOf(c.getPrice());
-            String forp2=String.valueOf(c.getAvailab());
-            logger.info(NAMES+c.getCarName()+" || Category:- "+c.getCategorie()+" || Price:- "+forp+AVAILABLES+forp2+DESCRIPTION+c.getDescr());
+            logger.info(NAMES+c.getCarName());
+            logger.info(" || Category:- "+c.getCategorie());
+            logger.info(" || Price:- "+c.getPrice());
+            logger.info(AVAILABLES+c.getAvailab());
+            logger.info(DESCRIPTION);
+            logger.info(c.getDescr());
         }
     }
     public static void adding(String u,String p,String bd)
