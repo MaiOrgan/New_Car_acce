@@ -1,18 +1,18 @@
 package today.edu;
 public class User
 {
-    public  String user_name;
+    public  String userName;
     public  String pass;
-    public String BD;
+    public String birthDate;
 
     public User(String un, String pa,String bd) {
         // TODO Auto-generated constructor stub
-        user_name=un;
+        userName =un;
         pass=pa;
-        BD=bd;
+        birthDate =bd;
     }
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
     public String getPass() {
         return pass;
