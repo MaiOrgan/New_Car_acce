@@ -31,9 +31,14 @@ public class Main {
 
         for(Car c: o.cp ){
             if(name.equals(c.getCategorie() )){
-                String k=String.valueOf(c.getPrice());
-                String f=String.valueOf(c.getAvailab());
-                logger.info(NAMES+c.getCarName()+" || Price:- "+k+AVAILABLES+f+DESCRIPTION+c.getDescr());
+               logger.info(NAMES);
+                logger.info(c.getCarName());
+                logger.info(" || Price:- ");
+                logger.info(String.valueOf(c.getPrice()));
+                logger.info(AVAILABLES);
+                logger.info(String.valueOf(c.getAvailab()));
+                logger.info(DESCRIPTION);
+                logger.info(c.getDescr());
             }
         }
     }
