@@ -3,7 +3,7 @@ package org;
 import today.edu.MyAppT;
 import today.edu.User;
 import today.edu.Car;
-import today.edu.Order;
+import today.edu.order;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import java.util.logging.*;
@@ -140,7 +140,7 @@ public class Main {
     }
     public static int theInformationShouldAppear(String name) {
         int a=0;
-        for(Order o : o.op){
+        for(order o : o.op){
             if(name.equals(o.Uname)){
                 System.out.println(o.Cname+"\t"+o.date);
                 a=1;
