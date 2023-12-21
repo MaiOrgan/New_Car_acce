@@ -6,7 +6,6 @@ public class User
     public String birthDate;
 
     public User(String un, String pa,String bd) {
-        // TODO Auto-generated constructor stub
         userName =un;
         pass=pa;
         birthDate =bd;
