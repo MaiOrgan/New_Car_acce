@@ -194,17 +194,17 @@ public class MyAppT
     public void printCarList(int choose){
         if(choose==1){
         for(car c:carArrayList){
-            System.out.println(c.getCar_name());
-            System.out.println(c.getPrice());
-            System.out.println(c.getAvailab());
-            System.out.println(c.getDescr());
+            logger.info(c.getCar_name());
+            logger.info(c.getPrice());
+            logger.info(c.getAvailab());
+            logger.info(c.getDescr());
         }}
         else{
             for(car c:carArrayList){
-                System.out.println(c.getCar_name());
-                System.out.println(c.getCategorie());
-                System.out.println(c.getAvailab());
-                System.out.println(c.getDescr());
+                logger.info(c.getCar_name());
+                logger.info(c.getCategorie());
+                logger.info(c.getAvailab());
+                logger.info(c.getDescr());
             }
         }
     }
@@ -238,8 +238,8 @@ public class MyAppT
     public void appearInformation(String name){
         for(order o : op){
             if(name.equals(o.Uname)){
-                System.out.println(o.Cname);
-                System.out.println(o.date);
+               logger.info(o.Cname);
+               logger.info(o.date);
                 appear = true;
             }
         }
