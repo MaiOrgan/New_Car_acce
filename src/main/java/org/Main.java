@@ -70,11 +70,11 @@ public class Main {
         for(Car c: o.cp ){
             if(p==c.price){
                 String f=String.valueOf(c.availab);
-                System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+Description+c.descr);
+               logger.info("Name:- "+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+Description+c.descr);
                 l=1;
             }
             if(l==0)
-                System.out.println("No product with this price in our company");
+                logger.info("No product with this price in our company");
         }
     }
     public static void buying(String cn,String d,int r)
@@ -100,15 +100,15 @@ public class Main {
         int fd=o.cp.get(indexm).availab;
         if(!a1) {
 
-            System.out.println("cant buy this product in this day sorry...");
+           logger.info("cant buy this product in this day sorry...");
         }
         else if (!a2) {
 
-            System.out.println("There is no product with this name in our company sorry...");
+            logger.info("There is no product with this name in our company sorry...");
         }
         else if (fd<r) {
 
-            System.out.println("We dont have the amount that you need from this product sorry...");
+            logger.info("We dont have the amount that you need from this product sorry...");
         }
         else {
 
