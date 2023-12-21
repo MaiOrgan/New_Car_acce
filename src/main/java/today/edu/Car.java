@@ -1,11 +1,11 @@
 package today.edu;
 
 public class Car {
-    public String car_name;
-    public String categorie;
-    public int price;
-    public int availab;
-    public String descr;
+    private String car_name;
+    private String categorie;
+    private int price;
+    private int availab;
+    private String descr;
 
     public Car(String N, String C, int P,int A, String D){
         car_name=N;
@@ -44,6 +44,15 @@ public class Car {
 
    public void setAvailab(int availab) {
         this.availab = availab;
+    }
+    public void setName(String car_name) {
+        this.car_name = car_name;
+    }
+    public void setCat(String categorie) {
+        this.categorie = categorie;
+    }
+    public void setDes(String descr) {
+        this.descr = descr;
     }
 
     public void setPrice(int price) {
