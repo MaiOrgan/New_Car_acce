@@ -172,8 +172,8 @@ public class MyAppT
         }
     }
     public void printCatalog(Car cc){
-        logger.info(cc.getDescr());
-        logger.info(cc.getPrice());
+        System.out.println(cc.getDescr());
+        System.out.println(cc.getPrice());
         System.out.println(cc.getAvailab());
         System.out.println(cc.getCategorie());
     }
