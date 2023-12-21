@@ -5,9 +5,9 @@ public class Order {
     public String Cname;
     public String date;
 
-    public Order(String Uname, String Cname, String Datee){
-        Uname =  Uname;
-        Cname = Cname;
+    public Order(String Unamee, String Cnamee, String Datee){
+        Uname =  Unamee;
+        Cname = Cnamee;
         date = Datee;
     }
 }
