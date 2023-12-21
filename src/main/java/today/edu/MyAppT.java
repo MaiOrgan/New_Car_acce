@@ -228,8 +228,8 @@ public class MyAppT
     }
     public void appearInformation(String name){
         for(Order o : op){
-            if(name.equals(o.Uname)){
-                logger.info(o.Cname);
+            if(name.equals(o.uname)){
+                logger.info(o.cname);
                 logger.info(o.date);
                 appear = true;
             }
