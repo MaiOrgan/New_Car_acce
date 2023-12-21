@@ -284,14 +284,14 @@ public class Main {
                                 cm=corn();
                             } else if (k == 4) {
                                 cm = true;
-                                System.out.println("Write the category that your product that you are searching on it belong to it??!");
+                                logger.info("Write the category that your product that you are searching on it belong to it??!");
                                 String name = input.next();
                                 iRequestInformationAboutSpecificProductByEnteringItsName2(name);
                                 
                                 cm=corn();
                             } else if (k == 5) {
                                 cm = true;
-                                System.out.println("Write the price for the product that you are searching on");
+                                logger.info("Write the price for the product that you are searching on");
                                 int kkk = input.nextInt();
                                 int j=iRequestInformationAboutSpecificProductByEnteringItsName22(kkk);
                                 
@@ -303,10 +303,10 @@ public class Main {
                         }
                         else if (Role==3)
                         {
-                            System.out.println("Write the date that you want to make it available for buying");
+                            logger.info("Write the date that you want to make it available for buying");
                             String d=input.next();
                             o.date.add(d);
-                            System.out.println("Done in Successfully way");
+                            logger.info("Done in Successfully way");
                            
                             cm=corn();
                         }
@@ -317,21 +317,21 @@ public class Main {
                 }
                 else if (m==2)
                 {
-                    System.out.println("This ID means that you are the INSTALLER so your permissions like that:-");
+                    logger.info("This ID means that you are the INSTALLER so your permissions like that:-");
                 }
                 else if(m==3)
                 {
                     while(cm2) {
-                        System.out.println("This ID means that you are the CUSTOMER so your permissions like that:-");
-                        System.out.println("1:-you could buy a product so if you want please enter these information");
-                        System.out.println("2:-you could change your password");
+                        logger.info("This ID means that you are the CUSTOMER so your permissions like that:-");
+                        logger.info("1:-you could buy a product so if you want please enter these information");
+                        logger.info("2:-you could change your password");
                         int b=input.nextInt();
                         if(b==1) {
-                            System.out.println("Please enter the name of the product that you want to buy it");
+                            logger.info("Please enter the name of the product that you want to buy it");
                             String h = input.next();
-                            System.out.println("write the date for buying this product");
+                            logger.info("write the date for buying this product");
                             String klj = input.next();
-                            System.out.println("Write the number of peaces that you want to buy it from this product");
+                            logger.info("Write the number of peaces that you want to buy it from this product");
                             String fff = input.next();
                             int cv = Integer.parseInt(fff);
                             buying(h, klj, cv);
@@ -340,11 +340,11 @@ public class Main {
                         }
                         else if(b==2)
                         {
-                            System.out.println("enter the new password that you want to have it");
+                            logger.info("enter the new password that you want to have it");
                             String np=input.next();
                             int l=o.yourInformationUpdatesSuccessfully(genera,np);
                             if(l==1)
-                                System.out.println("done in successfully way");
+                               logger.info("done in successfully way");
                             
                             cm2 = corn();
                         }
@@ -352,7 +352,7 @@ public class Main {
                         {
                             int ll=theInformationShouldAppear(genera);
                             if(ll==0)
-                                System.out.println("No previous orders");
+                                logger.info("No previous orders");
                             
                             cm2 = corn();
                         }
@@ -360,7 +360,7 @@ public class Main {
                 }
                 else
                 {
-                    System.out.println("There's something wrong no number like that");
+                    logger.info("There's something wrong no number like that");
                 }
             }
         }
