@@ -194,17 +194,17 @@ public class MyAppT
     public void printCarList(int choose){
         if(choose==1){
         for(car c:carArrayList){
-            logger.info(c.getCar_name());
+            System.out.println(c.getCar_name());
             logger.info(c.getPrice());
             logger.info(c.getAvailab());
             logger.info(c.getDescr());
         }}
         else{
             for(car c:carArrayList){
-                logger.info(c.getCar_name());
-                logger.info(c.getCategorie());
-                logger.info(c.getAvailab());
-                logger.info(c.getDescr());
+               System.out,println(c.getCar_name());
+               System.out.println(c.getCategorie());
+                System.out.println(c.getAvailab());
+                System.out.println(c.getDescr());
             }
         }
     }
