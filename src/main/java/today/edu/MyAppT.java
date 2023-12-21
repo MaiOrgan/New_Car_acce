@@ -1,6 +1,6 @@
 package today.edu;
 import java.util.ArrayList;
-
+import java.util.logging.Logger;
 public class MyAppT
 {
     public boolean isLogged=false;
@@ -13,7 +13,7 @@ public class MyAppT
     public ArrayList<car> cp = new ArrayList<car>();
     public ArrayList<order> op = new ArrayList<order>();
     public ArrayList<String>date = new ArrayList<String>();
-
+    private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
     public MyAppT()
     {
         User u1= new User("haya","123","7\3\2004");
@@ -42,7 +42,7 @@ public class MyAppT
 
             if (user_name.equals(u.getUser_name()) && u.getPass().equals(pass)) {
                 validation = true;
-                System.out.println("hi");
+                logger.info("hi");
                 break;
             }}
     }
@@ -84,7 +84,7 @@ public class MyAppT
 
     public void theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(String name, String categorie, int price, int ava, String desc) {
         cp.add(new car(name, categorie, price, ava, desc));
-        System.out.println("You have added this product in a successfully way");
+        logger.info("You have added this product in a successfully way");
     }
 
     public void iRequestInformationAboutSpecificProductByEnteringItsName(String name) {
@@ -92,7 +92,7 @@ public class MyAppT
             if(name.equals(c.car_name)){
                 String k=String.valueOf(c.price);
                 String f=String.valueOf(c.availab);
-                System.out.println("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
+                logger.info("Category:- "+c.categorie+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.descr);
             }
         }
     }
@@ -101,7 +101,7 @@ public class MyAppT
     {
         for(User c:up)
         {
-            System.out.println("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
+           logger.info("Gmail:- "+c.user_name+"\t"+"Password:- "+c.pass+"\t"+"BirthDate:- "+c.BD);
         }
     }
     int yuy=0;
