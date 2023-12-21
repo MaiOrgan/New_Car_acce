@@ -117,7 +117,7 @@ public class Main {
         if(u.isEmpty())
             logger.info("You can't creat account while your name is empty");
         if(p.isEmpty())
-            System.out.println("You can't creat account while your password is empty");
+           logger.info("You can't creat account while your password is empty");
         o.up.add(new User(u,p,bd));
         logger.info("Your account created successfully ...");
     }
@@ -146,13 +146,13 @@ public class Main {
     }
 
     private static void displayMainMenu() {
-        System.out.println("The menu of our program like that:-");
-        System.out.println("1: Sign up to make a new account");
-        System.out.println("2: Log in to your previous account");
+        logger.info("The menu of our program like that:-");
+       logger.info("1: Sign up to make a new account");
+       logger.info("2: Log in to your previous account");
     }
 
     private static void signUpProcedure(Scanner input) {
-        System.out.println("In order to make a new account you have to enter your information");
+        logger.info("In order to make a new account you have to enter your information");
         String email = getInput(input, "Please enter your Gmail");
         String password = getInput(input, "Please enter your password");
         String birthDate = getInput(input, "Please enter your BirthDate");
@@ -165,11 +165,11 @@ public class Main {
 
         int loginStatus = exf(email, password);
         if (email.equals("-"))
-            System.out.println("You have to write your name cant be empty");
+            logger.info("You have to write your name cant be empty");
         else if (password.equals("-"))
-            System.out.println("You have to write your password cant be empty");
+            logger.info("You have to write your password cant be empty");
         else if (loginStatus == 0) {
-            System.out.println("There's something wrong; there's no account with this information.");
+            logger.info("There's something wrong; there's no account with this information.");
         } else {
             userLoggedIn(input);
         }
