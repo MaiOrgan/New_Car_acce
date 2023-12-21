@@ -31,8 +31,8 @@ public class Main {
     }
     public static void printing ()
     {
-        System.out.println("Sorry no choice as that ...");
-        System.out.println("Please repeat the process again... ");
+        logger.info("Sorry no choice as that ...");
+        logger.info("Please repeat the process again... ");
     }
     public static void iRequestInformationAboutSpecificProductByEnteringItsName2(String name) {
 
@@ -40,7 +40,7 @@ public class Main {
             if(name.equals(c.categorie)){
                 String k=String.valueOf(c.price);
                 String f=String.valueOf(c.availab);
-                System.out.println(ACTION_2+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+ ACTION_1+c.descr);
+               logger.info(ACTION_2+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+ ACTION_1+c.descr);
 
             }
         }
@@ -93,22 +93,22 @@ public class Main {
         int fd=o.cp.get(indexm).availab;
         if(a1==false) {
 
-            System.out.println("cant buy this product in this day sorry...");
+           logger.info("cant buy this product in this day sorry...");
         }
         else if (a2==false) {
 
-            System.out.println("There is no product with this name in our company sorry...");
+            logger.info("There is no product with this name in our company sorry...");
         }
         else if (fd<r) {
 
-            System.out.println("We dont have the amount that you need from this product sorry...");
+           logger.info("We dont have the amount that you need from this product sorry...");
         }
         else {
 
             int y=o.cp.get(indexm).availab;
             y-=r;
             o.cp.get(indexm).setAvailab(y);
-            System.out.println("Your installation has done in a successfully way...");
+            logger.info("Your installation has done in a successfully way...");
         }
 
     }
