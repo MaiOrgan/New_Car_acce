@@ -34,9 +34,9 @@ public class Main {
                logger.info(NAMES);
                 logger.info(c.getCarName());
                 logger.info(" || Price:- ");
-                logger.info(String.valueOf(c.getPrice()));
+                logger.info(String.format(" %d",c.getPrice()));
                 logger.info(AVAILABLES);
-                logger.info(String.valueOf(c.getAvailab()));
+                logger.info(String.format(" %d",c.getAvailab()));
                 logger.info(DESCRIPTION);
                 logger.info(c.getDescr());
             }
