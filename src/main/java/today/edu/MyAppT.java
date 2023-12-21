@@ -188,15 +188,15 @@ public class MyAppT
         if(choose==1){
         for(Car c:carArrayList){
             logger.info(c.getCar_name());
-             logger.info(c.getPrice());
-             logger.info(c.getAvailab());
+            System.out.println(c.getPrice());
+            System.out.println(c.getAvailab());
             logger.info(c.getDescr());
         }}
         else{
             for(Car c:carArrayList){
                 logger.info(c.getCar_name());
                 logger.info(c.getCategorie());
-                logger.info(c.getAvailab());
+                System.out.println(c.getAvailab());
                 logger.info(c.getDescr());
             }
         }
