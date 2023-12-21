@@ -3,19 +3,32 @@ package org;
 import today.edu.MyAppT;
 import today.edu.User;
 import today.edu.Car;
-import today.edu.order;
-
+import today.edu.Order;
 import java.util.Scanner;
 import java.util.logging.Logger;
+import java.util.logging.*;
+
 public class Main {
-    static MyAppT o = new MyAppT();
-    static boolean cm= true;
-    static boolean cm2= true;
-    private static final String ACTION_1 = "|| Description about it:- "; 
-    private static final String ACTION_2 = "Name:- ";
-    private static final String ACTION_3 = " || The num of available pieces:- ";
     private static final Logger logger = Logger.getLogger(Main.class.getName());
-    public static int exf(String ku,String  p)
+    static {
+        Handler consoleHandler = new ConsoleHandler();
+        consoleHandler.setFormatter(new Formatter() {
+            @Override
+            public String format(LogRecord record) {
+                return record.getLevel() + ": " + record.getMessage() + "\n";
+            }
+        });
+        logger.addHandler(consoleHandler);
+        logger.setLevel(Level.ALL);
+        Logger rootLogger = Logger.getLogger("");
+        Handler[] handlers = rootLogger.getHandlers();
+        if (handlers[0] instanceof ConsoleHandler) {
+            rootLogger.removeHandler(handlers[0]);
+        }
+    }
+    static MyAppT o = new MyAppT();
+    static final public String Description = " || Description about it:- ";
+    public static int exf(String ku,String p)
     {
         int l=0;
         for (User u: o.up)
@@ -29,20 +42,16 @@ public class Main {
         }
         return l;
     }
-    public static void printing ()
-    {
-        logger.info("Sorry no choice as that ...");
-        logger.info("Please repeat the process again... ");
-    }
     public static void iRequestInformationAboutSpecificProductByEnteringItsName2(String name) {
 
-      for(Car c: o.cp) {
-        if(name.equals(c.categorie)) {
-            String logMessage = String.format("%s%s || Price:- %s%s%s%s%s",
-                                              ACTION_2, c.car_name, c.price, ACTION_3, c.availab, ACTION_1, c.descr);
-            logger.info(logMessage);
+        for(Car c: o.cp ){
+            if(name.equals(c.categorie)){
+                String k=String.valueOf(c.price);
+                String f=String.valueOf(c.availab);
+                System.out.println("Name:- "+c.car_name+" || Price:- "+k+" || The num of available pieces:- "+f+Description+c.descr);
+
+            }
         }
-       }
     }
     public static int changeInfo(String g,String np)
     {
@@ -56,20 +65,17 @@ public class Main {
         }
         return f;
     }
-    public static int iRequestInformationAboutSpecificProductByEnteringItsName22(int p) {
-        int l = 0;
-        for (Car c : o.cp) {
-            if (p == c.price) {
-                String logMessage = String.format("%s%s || Category:- %s%s%s%s%s",
-                                                  ACTION_2, c.car_name, c.categorie, ACTION_3, c.availab, ACTION_1, c.descr);
-                logger.info(logMessage);
-                l = 1;
+    public static void iRequestInformationAboutSpecificProductByEnteringItsName22(int p) {
+        int l=0;
+        for(Car c: o.cp ){
+            if(p==c.price){
+                String f=String.valueOf(c.availab);
+                System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || The num of available pieces:- "+f+Description+c.descr);
+                l=1;
             }
+            if(l==0)
+                System.out.println("No product with this price in our company");
         }
-    if (l == 0) {
-        logger.info("No product with this price in our company");
-}
-return l;
     }
     public static void buying(String cn,String d,int r)
     {
@@ -94,276 +100,305 @@ return l;
         int fd=o.cp.get(indexm).availab;
         if(!a1) {
 
-           logger.info("cant buy this product in this day sorry...");
+            System.out.println("cant buy this product in this day sorry...");
         }
         else if (!a2) {
 
-            logger.info("There is no product with this name in our company sorry...");
+            System.out.println("There is no product with this name in our company sorry...");
         }
         else if (fd<r) {
 
-           logger.info("We dont have the amount that you need from this product sorry...");
+            System.out.println("We dont have the amount that you need from this product sorry...");
         }
         else {
 
             int y=o.cp.get(indexm).availab;
             y-=r;
             o.cp.get(indexm).setAvailab(y);
-            logger.info("Your installation has done in a successfully way...");
+            System.out.println("Your installation has done in a successfully way...");
         }
 
     }
 
     public static void listting()
     {
-       for(Car c : o.cp) {
-        String logMessage = String.format("%s%s || Category:- %s || Price:- %s%s%s%s%s",
-                                          ACTION_2, c.car_name, c.categorie, c.price, ACTION_3, c.availab, ACTION_1, c.descr);
-        logger.info(logMessage);
-    }
-
+        for(Car c:o.cp)
+        {
+            String forp=String.valueOf(c.price);
+            String forp2=String.valueOf(c.availab);
+            System.out.println("Name:- "+c.car_name+" || Category:- "+c.categorie+" || Price:- "+forp+" || The num of available pieces:- "+forp2+Description+c.descr);
+        }
     }
     public static void adding(String u,String p,String bd)
     {
         if(u.isEmpty())
-            logger.info("You can't creat account while your name is empty");
+            System.out.println("You can't creat account while your name is empty");
         if(p.isEmpty())
-            logger.info("You can't creat account while your password is empty");
+            System.out.println("You can't creat account while your password is empty");
         o.up.add(new User(u,p,bd));
-        logger.info("Your account created successfully ...");
-    }
-    public static boolean corn()
-    {
-        logger.info("Do you want to do anther thing ??!");
-        Scanner input=new Scanner(System.in);
-        boolean cm=true;
-        String res = input.next();
-        if (res.equals("No") || res.equals("no"))
-            cm = false;
-        return cm;
+        System.out.println("Your account created successfully ...");
     }
     public static int theInformationShouldAppear(String name) {
-        int a = 0;
-        for(order o : o.op){
+        int a=0;
+        for(Order o : o.op){
             if(name.equals(o.Uname)){
-                String logMessage = String.format("%s\t%s", o.Cname, o.date);
-                logger.info(logMessage);
-                a = 1;
+                System.out.println(o.Cname+"\t"+o.date);
+                a=1;
             }
         }
         return a;
     }
 
+
     public static void main(String[] args) {
-        logger.info( "The menu of our programme like that:-");
-        logger.info("1:sign up to make a new account");
-        logger.info("2:log in to your previous account");
-        int n;
+        displayMainMenu();
         Scanner input = new Scanner(System.in);
-        n = input.nextInt();
-        if (n == 1) {
-            logger.info("In order to make a new account you have to enter your information");
-            logger.info("Please enter your Gmail");
-            String s1;
-            s1 = input.next();
-            logger.info("Please enter your password");
-            String s2;
-            s2 = input.next();
-            logger.info("Please enter your BirthDate");
-            String s3;
-            s3=input.next();
-            adding(s1, s2, s3);
+        int choice = input.nextInt();
+
+        switch (choice) {
+            case 1 -> signUpProcedure(input);
+            case 2 -> loginProcedure(input);
+            default -> logger.info("Invalid option selected.");
         }
-        if (n == 2) {
-            logger.info("Enter the Gmail for your account");
-            String s1;
-            s1 = input.next();
-            logger.info("Enter the password for your account");
-            String s2;
-            s2 = input.next();
-            int v = exf(s1, s2);
-            if (s1.equals("-"))
-                logger.info("You have to write your name cant be empty");
-            else if (s2.equals("-"))
-                logger.info("You have to write your password cant be empty");
-            else if (v == 0)
-                logger.info("There's something wrong there's no account with this information");
-            else
-            {
-                logger.info("you have logged successfully");
-                logger.info("Now in order to see your permissions you have to enter the specific id for your position");
-                int m=input.nextInt();
-                if(m==1) {
-                    logger.info("This ID means that you are the ADMIN so your permissions like that:-");
-                    while (cm)
-                    {
-                        logger.info("1:-You can manage user account");
-                        logger.info("2:-You can manage the products in the company");
-                        int Role=input.nextInt();
-                        if(Role==1)
-                        {
-                            logger.info("1:- Change information for previous users");
-                            logger.info("2:- adding new user");
-                            logger.info("3:- See all user accounts");
-                            int koiut = input.nextInt();
-                            if(koiut==1)
-                            {
-                                logger.info("You can change the password for account by giving its gmail");
-                                String mg=input.next();
-                                logger.info("Write the new password for the email");
-                                String npp=input.next();
-                                int f=changeInfo(mg,npp);
-                                if(f==0)
-                                {
-                                    logger.info("No account founded with this gmail");
-                                }
-                                else {
-                                    logger.info("Password has changed in successfully way");
-                                   
-                                    cm=corn();
-                                }
-                            }
-                            else if(koiut==2)
-                            {
-                                cm=true;
-                                logger.info("Please enter the Gmail for the account that you want to creat it ");
-                                String s111;
-                                s111 = input.next();
-                                logger.info("Please enter the password for the account that you want to creat it ");
-                                String s211;
-                                s211 = input.next();
-                                logger.info("Please enter the BirthDate for the user that you want to make account for him");
-                                String s333;
-                                s333=input.next();
-                                adding(s111, s211, s333);
-                                
-                                cm=corn();
-                            }
-                            else if(koiut==3)
-                            {
-                                o.seeUser();
-                               
-                                cm=corn();
-                            }
-                            else
-                            {
-                                printing();
-                            }
-                        }
-                        else if(Role==2) {
-                            logger.info("1:- Add a new product .");
-                            logger.info("2:- Make a list for all the products in the company .");
-                            logger.info("3:- Search on a product by entering it's name .");
-                            logger.info("4:- Search on a product by entering it's category .");
-                            logger.info("5:- Search on a product by entering it's price .");
-                            int k = input.nextInt();
-                            if (k == 1) {
-                                logger.info("Enter the name of the product that you want to add");
-                                String name = input.next();
-                                logger.info("Enter the category's name that your product belong to");
-                                String category = input.next();
-                                logger.info("Enter the price of the product that you want to add");
-                                int y = input.nextInt();
-                                logger.info("Enter how many pieces from this product you want to add");
-                                int a = input.nextInt();
-                                logger.info("write a discribtion about the product that you want to add");
-                                String de = input.next();
-                                o.theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(name, category, y, a, de);
-                               
-                                cm=corn();
-                            } else if (k == 2) {
-                                cm = true;
-                                listting();
-                                
-                                cm=corn();
-                            } else if (k == 3) {
-                                cm = true;
-                                logger.info("Write the name of the product that you are searching on it??!");
-                                String name = input.next();
-                                o.iRequestInformationAboutSpecificProductByEnteringItsName(name);
-                               
-                                cm=corn();
-                            } else if (k == 4) {
-                                cm = true;
-                                logger.info("Write the category that your product that you are searching on it belong to it??!");
-                                String name = input.next();
-                                iRequestInformationAboutSpecificProductByEnteringItsName2(name);
-                                
-                                cm=corn();
-                            } else if (k == 5) {
-                                cm = true;
-                                logger.info("Write the price for the product that you are searching on");
-                                int kkk = input.nextInt();
-                                iRequestInformationAboutSpecificProductByEnteringItsName22(kkk);
-                                
-                                cm=corn();
-                            }
-                            else {
-                                printing();
-                            }
-                        }
-                        else if (Role==3)
-                        {
-                            logger.info("Write the date that you want to make it available for buying");
-                            String d=input.next();
-                            o.date.add(d);
-                            logger.info("Done in Successfully way");
-                           
-                            cm=corn();
-                        }
-                        else {
-                            printing();
-                        }
-                    }
+    }
+
+    private static void displayMainMenu() {
+        logger.info("The menu of our program like that:-");
+        logger.info("1: Sign up to make a new account");
+        logger.info("2: Log in to your previous account");
+    }
+
+    private static void signUpProcedure(Scanner input) {
+        logger.info("In order to make a new account you have to enter your information");
+        String email = getInput(input, "Please enter your Gmail");
+        String password = getInput(input, "Please enter your password");
+        String birthDate = getInput(input, "Please enter your BirthDate");
+        adding(email, password, birthDate);
+    }
+
+    private static void loginProcedure(Scanner input) {
+        String email = getInput(input, "Enter the Gmail for your account");
+        String password = getInput(input, "Enter the password for your account");
+
+        int loginStatus = exf(email, password);
+        if (email.equals("-"))
+            logger.info("You have to write your name cant be empty");
+        else if (password.equals("-"))
+            logger.info("You have to write your password cant be empty");
+        else if (loginStatus == 0) {
+            logger.info("There's something wrong; there's no account with this information.");
+        } else {
+            userLoggedIn(input);
+        }
+    }
+
+    private static String getInput(Scanner input, String prompt) {
+        logger.info(prompt);
+        return input.next();
+    }
+
+    private static void userLoggedIn(Scanner input) {
+        logger.info("You have logged in successfully");
+        logger.info("Now, in order to see your permissions you have to enter the specific id for your position");
+        int userId = input.nextInt();
+
+        switch (userId) {
+            case 1 -> handleAdminActions(input);
+            case 2 -> System.out.println("This ID means that you are the INSTALLER so your permissions like that:-");
+            case 3 -> handleCustomerActions(input);
+            default -> logger.info("Invalid user ID.");
+        }
+    }
+    private static void handleAdminActions(Scanner input) {
+        boolean continueManaging = true;
+        while (continueManaging) {
+            logger.info("You are the ADMIN. Please select an action:");
+            logger.info("1: Manage user accounts");
+            logger.info("2: Manage products");
+            logger.info("3: Manage Availability Date");
+            logger.info("4: Log out");
+            int choice = input.nextInt();
+            switch (choice) {
+                case 1 -> adminManageUsers(input);
+                case 2 -> adminManageProducts(input);
+                case 3 -> addAvailabilityDate(input);
+                case 4 -> {
+                    continueManaging = false;
+                    logger.info("Logging out as admin.");
                 }
-                else if (m==2)
-                {
-                    logger.info("This ID means that you are the INSTALLER so your permissions like that:-");
-                }
-                else if(m==3)
-                {
-                    while(cm2) {
-                        logger.info("This ID means that you are the CUSTOMER so your permissions like that:-");
-                        logger.info("1:-you could buy a product so if you want please enter these information");
-                        logger.info("2:-you could change your password");
-                        int b=input.nextInt();
-                        if(b==1) {
-                            logger.info("Please enter the name of the product that you want to buy it");
-                            String h = input.next();
-                            logger.info("write the date for buying this product");
-                            String klj = input.next();
-                            logger.info("Write the number of peaces that you want to buy it from this product");
-                            String fff = input.next();
-                            int cv = Integer.parseInt(fff);
-                            buying(h, klj, cv);
-                           
-                            cm2 = corn();
-                        }
-                        else if(b==2)
-                        {
-                            logger.info("enter the new password that you want to have it");
-                            String np=input.next();
-                            int l=o.yourInformationUpdatesSuccessfully(s1,np);
-                            if(l==1)
-                               logger.info("done in successfully way");
-                            
-                            cm2 = corn();
-                        }
-                        else if(b==3)
-                        {
-                            int ll=theInformationShouldAppear(s1);
-                            if(ll==0)
-                                logger.info("No previous orders");
-                            
-                            cm2 = corn();
-                        }
-                    }
-                }
-                else
-                {
-                    logger.info("There's something wrong no number like that");
-                }
+                default -> printing();
             }
         }
     }
+
+
+    private static void handleCustomerActions(Scanner input) {
+        boolean continueShopping = true;
+        while (continueShopping) {
+            logger.info("You are the CUSTOMER. Please select an action:");
+            logger.info("1: Buy a product");
+            logger.info("2: Change password");
+            logger.info("3: View order history");
+            logger.info("4: Log out");
+            int choice = input.nextInt();
+            switch (choice) {
+                case 1 -> customerBuyProduct(input);
+                case 2 -> customerChangePassword(input);
+                case 3 -> customerViewOrderHistory(input);
+                case 4 -> {
+                    continueShopping = false;
+                    logger.info("Logging out as customer.");
+                }
+                default -> printing();
+            }
+        }
+    }
+    private static void adminManageUsers(Scanner input) {
+        boolean continueManaging = true;
+        while (continueManaging) {
+            logger.info("Select an action for user management:");
+            logger.info("1: Change user information");
+            logger.info("2: Add new user");
+            logger.info("3: See all user accounts");
+            logger.info("4: Return to admin menu");
+
+            int action = input.nextInt();
+            switch (action) {
+                case 1 -> changeUserInformation(input);
+                case 2 -> addUser(input);
+                case 3 -> seeAllUsers();
+                case 4 -> continueManaging = false;
+                default -> printing();
+            }
+        }
+    }
+    private static void changeUserInformation(Scanner input) {
+        logger.info("Enter the username of the account to update:");
+        String username = input.next();
+        logger.info("Enter the new password for the account:");
+        String newPassword = input.next();
+
+        int result = changeInfo(username, newPassword);
+        if (result == 0) {
+            logger.info("No account founded with this gmail");
+        } else {
+            logger.info("Password has changed in successfully way");
+        }
+    }
+    private static void addUser(Scanner input) {
+        logger.info("Enter the new username (email):");
+        String username = input.next();
+        logger.info("Enter the password for the new account:");
+        String password = input.next();
+        logger.info("Enter the birth date for the new account (format DD/MM/YYYY):");
+        String birthDate = input.next();
+        adding(username, password, birthDate);
+    }
+    private static void seeAllUsers() {
+        o.seeUser();
+    }
+    private static void printing() {
+        logger.info("Invalid choice, please try again.");
+    }
+
+    private static void adminManageProducts(Scanner input) {
+        boolean continueManaging=true;
+        while (continueManaging) {
+            logger.info("Select an action for product management:");
+            logger.info("1: Add a new product");
+            logger.info("2: List all products");
+            logger.info("3: Search for a product by name");
+            logger.info("4: Search for a product by category");
+            logger.info("5: Search for a product by price");
+            logger.info("6: Return to admin menu");
+
+            int action = input.nextInt();
+            switch (action) {
+                case 1 -> addProduct(input);
+                case 2 -> listAllProducts();
+                case 3 -> searchProductByName(input);
+                case 4 -> searchProductByCategory(input);
+                case 5 -> searchProductByPrice(input);
+                case 6 -> continueManaging = false;
+                default -> printing();
+            }
+        }
+    }
+    private static void addProduct(Scanner input) {
+        logger.info("Enter the name of the product:");
+        String name = input.next();
+        logger.info("Enter the product's category:");
+        String category = input.next();
+        logger.info("Enter the price of the product:");
+        int price = input.nextInt();
+        logger.info("Enter the number of available units:");
+        int availability = input.nextInt();
+        logger.info("Enter a description for the product:");
+        String description = input.next(); // Assuming description is a single word; if not, use input.nextLine()
+
+        o.theNameIsAndCategorieIsAndPriceIsAndAvailabilityIsAndDescriptionsIs(name, category, price, availability, description);
+        logger.info("Product added successfully.");
+    }
+    private static void listAllProducts() {
+        listting();
+    }
+    private static void searchProductByName(Scanner input) {
+        logger.info("Enter the name of the product to search:");
+        String name = input.next();
+        o.iRequestInformationAboutSpecificProductByEnteringItsName(name);
+    }
+    private static void searchProductByCategory(Scanner input) {
+        logger.info("Enter the category of the products to search:");
+        String category = input.next();
+        iRequestInformationAboutSpecificProductByEnteringItsName2(category);
+    }
+    private static void searchProductByPrice(Scanner input) {
+        logger.info("Enter the price of the product to search:");
+        int price = input.nextInt();
+        iRequestInformationAboutSpecificProductByEnteringItsName22(price);
+    }
+
+
+    private static void addAvailabilityDate(Scanner input) {
+        logger.info("Write the date that you want to make it available for buying (format DD/MM/YYYY):");
+        String date = input.next();
+        o.date.add(date);
+        logger.info("Date added successfully.");
+    }
+
+
+
+    private static void customerBuyProduct(Scanner input) {
+        logger.info("Please enter the name of the product you wish to purchase:");
+        String productName = input.next();
+        logger.info("Enter the desired date for purchase:");
+        String purchaseDate = input.next();
+        logger.info("Enter the quantity you wish to purchase:");
+        int quantity = input.nextInt();
+        buying(productName, purchaseDate, quantity);
+    }
+
+    private static void customerChangePassword(Scanner input) {
+        logger.info("Enter your current email:");
+        String email = input.next();
+        logger.info("Enter your new password:");
+        String newPassword = input.next();
+        int result = o.yourInformationUpdatesSuccessfully(email, newPassword);
+        if (result == 1) {
+            logger.info("Password changed successfully.");
+        } else {
+            logger.info("Failed to change password. User not found.");
+        }
+    }
+
+    private static void customerViewOrderHistory(Scanner input) {
+        logger.info("Enter your email to view order history:");
+        String email = input.next();
+        int result = theInformationShouldAppear(email);
+        if (result == 0) {
+            logger.info("No orders found for this email.");
+        }
+    }
+
+
 }
