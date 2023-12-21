@@ -2,7 +2,7 @@ package org;
 
 import today.edu.MyAppT;
 import today.edu.User;
-import today.edu.car;
+import today.edu.Car;
 import today.edu.order;
 
 import java.util.Scanner;
@@ -36,7 +36,7 @@ public class Main {
     }
     public static void iRequestInformationAboutSpecificProductByEnteringItsName2(String name) {
 
-      for(car c: o.cp) {
+      for(Car c: o.cp) {
         if(name.equals(c.categorie)) {
             String logMessage = String.format("%s%s || Price:- %s%s%s%s%s",
                                               ACTION_2, c.car_name, c.price, ACTION_3, c.availab, ACTION_1, c.descr);
@@ -58,7 +58,7 @@ public class Main {
     }
     public static int iRequestInformationAboutSpecificProductByEnteringItsName22(int p) {
         int l=0;
-        for(car c: o.cp ){
+        for(Car c: o.cp ){
             if(p==c.price){
                 String f=String.valueOf(c.availab);
                 logger.info(ACTION_2+c.car_name+" || Category:- "+c.categorie+ ACTION_3 +f+ACTION_1+c.descr);
@@ -81,7 +81,7 @@ public class Main {
         }
         int indexm=0;
         int counterte=0;
-        for(car c : o.cp){
+        for(Car c : o.cp){
             if (cn.equals(c.car_name)){
                 a2=true;
                 indexm=counterte;
@@ -114,7 +114,7 @@ public class Main {
 
     public static void listting()
     {
-        for(car c:o.cp)
+        for(Car c:o.cp)
         {
             String forp=String.valueOf(c.price);
             String forp2=String.valueOf(c.availab);
