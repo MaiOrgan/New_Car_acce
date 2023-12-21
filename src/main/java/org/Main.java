@@ -125,9 +125,9 @@ public class Main {
     public static void adding(String u,String p,String bd)
     {
         if(u.isEmpty())
-            System.out.println("You can't creat account while your name is empty");
+            logger.info("You can't creat account while your name is empty");
         if(p.isEmpty())
-            System.out.println("You can't creat account while your password is empty");
+            logger.info("You can't creat account while your password is empty");
         o.up.add(new User(u,p,bd));
         logger.info("Your account created successfully ...");
     }
@@ -154,39 +154,39 @@ public class Main {
 
     public static void main(String[] args) {
         logger.info( "The menu of our programme like that:-");
-        System.out.println("1:sign up to make a new account");
-        System.out.println("2:log in to your previous account");
+        logger.info("1:sign up to make a new account");
+        logger.info("2:log in to your previous account");
         int n;
         Scanner input = new Scanner(System.in);
         n = input.nextInt();
         if (n == 1) {
-            System.out.println("In order to make a new account you have to enter your information");
-            System.out.println("Please enter your Gmail");
+            logger.info("In order to make a new account you have to enter your information");
+            logger.info("Please enter your Gmail");
             String s1;
             s1 = input.next();
-            System.out.println("Please enter your password");
+            logger.info("Please enter your password");
             String s2;
             s2 = input.next();
-            System.out.println("Please enter your BirthDate");
+            logger.info("Please enter your BirthDate");
             String s3;
             s3=input.next();
             adding(s1, s2, s3);
         }
         if (n == 2) {
-            System.out.println("Enter the Gmail for your account");
+            logger.info("Enter the Gmail for your account");
             String s1;
             s1 = input.next();
             genera=s1;
-            System.out.println("Enter the password for your account");
+            logger.info("Enter the password for your account");
             String s2;
             s2 = input.next();
             int v = exf(s1, s2);
             if (s1.equals("-"))
-                System.out.println("You have to write your name cant be empty");
+                logger.info("You have to write your name cant be empty");
             else if (s2.equals("-"))
-                System.out.println("You have to write your password cant be empty");
+                logger.info("You have to write your password cant be empty");
             else if (v == 0)
-                System.out.println("There's something wrong there's no account with this information");
+                logger.info("There's something wrong there's no account with this information");
             else
             {
                 System.out.println("you have logged successfully");
