@@ -63,11 +63,11 @@ public class MyAppT
         }
     }
     public void setEmptyUsernameAndPass(String Name, String pass) {
-        if (Name.isEmpty())
+        if (Name.isEmpty() && !pass.isEmpty())
             validation = false;
     }
     public void setValidUsernameAndEmptyPass(String Name, String pass) {
-        if (pass.isEmpty())
+        if (pass.isEmpty()&& !Name.isEmpty())
             validation = false;
     }
     public void iAmNotInSystem(MyAppT obj)
