@@ -16,7 +16,7 @@ public class Main {
     public static int exf(String ku,String p)
     {
         int l=0;
-        for (User u: o.up)
+        for (User u: o.getUp())
         {
             if(ku.equals("-")||p.equals("-"))
                 l=3;
@@ -29,9 +29,9 @@ public class Main {
     }
     public static void iRequestInformationAboutSpecificProductByEnteringItsName2(String name) {
 
-        for(Car c: o.cp ){
+        for(Car c: o.getCp() ){
             if(name.equals(c.getCategorie() )){
-               logger.info(NAMES);
+                logger.info(NAMES);
                 logger.info(c.getCarName());
                 logger.info(" || Price:- "+c.getPrice());
                 logger.info(AVAILABLES);
@@ -44,7 +44,7 @@ public class Main {
     public static int changeInfo(String g,String np)
     {
         int f=0;
-        for(User c:o.up)
+        for(User c:o.getUp())
         {
             if(c.getUserName().equals(g)) {
                 c.setPass(np);
@@ -55,7 +55,7 @@ public class Main {
     }
     public static void iRequestInformationAboutSpecificProductByEnteringItsName22(int p) {
         int l=0;
-        for(Car c: o.cp ){
+        for(Car c: o.getCp() ){
             if(p==c.getPrice() ){
                 String f=String.valueOf(c.getAvailab());
                 logger.info(NAMES);
@@ -74,7 +74,7 @@ public class Main {
     {
         boolean a1=false;
         boolean a2=false;
-        for(String dd: o.date) {
+        for(String dd: o.getDate()) {
             if (dd.equals(d)) {
                 a1 = true;
                 break;
@@ -82,7 +82,7 @@ public class Main {
         }
         int indexm=0;
         int counterte=0;
-        for(Car c : o.cp){
+        for(Car c : o.getCp()){
             if (cn.equals(c.getCarName())){
                 a2=true;
                 indexm=counterte;
@@ -90,7 +90,7 @@ public class Main {
             }
             counterte++;
         }
-        int fd= o.cp.get(indexm).getAvailab();
+        int fd= o.getCp().get(indexm).getAvailab();
         if(!a1) {
 
             logger.info("cant buy this product in this day sorry...");
@@ -105,9 +105,9 @@ public class Main {
         }
         else {
 
-            int y= o.cp.get(indexm).getAvailab();
+            int y= o.getCp().get(indexm).getAvailab();
             y-=r;
-            o.cp.get(indexm).setAvailab(y);
+            o.getCp().get(indexm).setAvailab(y);
             logger.info("Your installation has done in a successfully way...");
         }
 
@@ -115,7 +115,7 @@ public class Main {
 
     public static void listting()
     {
-        for(Car c:o.cp)
+        for(Car c:o.getCp())
         {
             logger.info(NAMES+c.getCarName());
             logger.info(" || Category:- "+c.getCategorie());
@@ -131,12 +131,12 @@ public class Main {
             logger.info("You can't creat account while your name is empty");
         if(p.isEmpty())
             logger.info("You can't creat account while your password is empty");
-        o.up.add(new User(u,p,bd));
+        o.addUser(new User(u,p,bd));
         logger.info("Your account created successfully ...");
     }
     public static int theInformationShouldAppear(String name) {
         int a=0;
-        for(Order o : o.op){
+        for(Order o : o.getOp()){
             if(name.equals(o.getUname())){
                 logger.info(o.getCname()+"\t"+o.getDate());
                 a=1;
@@ -358,7 +358,7 @@ public class Main {
     private static void addAvailabilityDate(Scanner input) {
         logger.info("Write the date that you want to make it available for buying (format DD/MM/YYYY):");
         String date = input.next();
-        o.date.add(date);
+        o.addDate(date);
         logger.info("Date added successfully.");
     }
 
