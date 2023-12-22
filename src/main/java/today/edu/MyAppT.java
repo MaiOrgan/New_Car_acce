@@ -18,9 +18,6 @@ public class MyAppT
     public List<User> getUp() {
         return up;
     }
-    public void setUp(List<User> up) {
-        this.up = up;
-    }
     public void addUser(User user) {
         up.add(user);
     }
@@ -153,7 +150,7 @@ public class MyAppT
     }
     int yuy=0;
     public int yourInformationUpdatesSuccessfully(String name,String pass) {
-        for (User u : up) {
+        for (User u : getUp()) {
             if (name.equals(u.getUserName())) {
                 u.setPass(pass);
                 yuy=1;
@@ -173,8 +170,7 @@ public class MyAppT
                 forget = true;
                 enteredUsername = userName;
                 break;
-            }
-        }
+            }}
     }
     public void takePass(String newPass){
         for (User user : up) {
@@ -186,8 +182,7 @@ public class MyAppT
             if (user.getUserName().equals(enteredUsername) && user.getPass().equals(newPass)) {
                 passwordUpdated = true;
                 break;
-            }
-        }
+            }}
     }
     public void createAcc(String enteredUsernam,String enteredPasswor){
         for (User user : up) {
@@ -208,7 +203,7 @@ public class MyAppT
     public String dateee ;
     public String cname;
     public void fillModelAndDate(String model,String datee){
-        for(String d: date){
+        for(String d: getDate()){
             if (d.equals(datee)) {
                 available1 = true;
                 dateee = datee;
@@ -260,7 +255,7 @@ public class MyAppT
         }
     }
     public void requestByPrice(int price){
-        for(Car c: cp ){
+        for(Car c: getCp() ){
             if(price==c.getPrice()){
                 carArrayList.add(new Car(c.getCarName(),c.getCategorie(),c.getPrice(),c.getAvailab(),c.getDescr()));
             }
@@ -285,7 +280,7 @@ public class MyAppT
         }
     }
     public void appearInformation(String name){
-        for(Order o : op){
+        for(Order o : getOp()){
             if(name.equals(o.getUname())){
                 logger.info(o.getCname());
                 logger.info(o.getDate());
