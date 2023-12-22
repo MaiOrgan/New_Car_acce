@@ -201,7 +201,8 @@ public class MyAppT
             for(Car c:carArrayList){
                 logger.info(c.getCarName());
                 logger.info(c.getCategorie());
-                logger.info(String.format(" %d", c.getAvailab())) ;
+                String kkk=String.valueOf(c.getAvailab());
+                logger.info(kkk) ;
                 logger.info(c.getDescr());
             }
         }
