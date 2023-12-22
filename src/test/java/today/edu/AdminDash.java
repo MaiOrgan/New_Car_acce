@@ -30,7 +30,7 @@ public class AdminDash {
     @Then("the product add successfully")
     public void theProductAddSuccessfully() {
         obj.addProduct(name);
-        assertEquals(1, obj.exist);
+        assertEquals(1, obj.getE());
     }
 
     @When("I ask you to list all the customer account")
