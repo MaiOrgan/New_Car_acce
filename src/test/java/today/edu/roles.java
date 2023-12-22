@@ -16,7 +16,7 @@ public class roles{
 
     @Given("I am in system")
     public void iAmInSystem() {
-        obj.isLogged=true;
+        obj.setLogged(true);
     }
 
     @And("I'm the admin")
@@ -31,17 +31,17 @@ public class roles{
 
     @Then("you can Manage products")
     public void youCanManageProducts() {
-        assertTrue("Admin can manage products", obj.isLogged && userRole.equals("admin"));
+        assertTrue("Admin can manage products", obj.getIsLogged() && userRole.equals("admin"));
     }
 
     @And("see categories")
     public void seeCategories() {
-        assertTrue("Admin can see categories", obj.isLogged && userRole.equals("admin"));
+        assertTrue("Admin can see categories", obj.getIsLogged() && userRole.equals("admin"));
     }
 
     @And("access user accounts")
     public void accessUserAccounts() {
-        assertTrue("Admin can access user accounts", obj.isLogged && userRole.equals("admin"));
+        assertTrue("Admin can access user accounts", obj.getIsLogged() && userRole.equals("admin"));
     }
 
     @And("I'm the Customer")
@@ -51,17 +51,17 @@ public class roles{
 
     @Then("You can Browse products")
     public void youCanBrowseProducts() {
-        assertTrue("Customer can browse products",userRole.equals("customer") && obj.isLogged);
+        assertTrue("Customer can browse products",userRole.equals("customer") && obj.getIsLogged());
     }
 
     @And("Make purchases")
     public void makePurchases() {
-        assertTrue("Customer can make Purchases",userRole.equals("customer") && obj.isLogged);
+        assertTrue("Customer can make Purchases",userRole.equals("customer") && obj.getIsLogged());
     }
 
     @And("View orders")
     public void viewOrders() {
-        assertTrue("Customer can view orders",userRole.equals("customer") && obj.isLogged);
+        assertTrue("Customer can view orders",userRole.equals("customer") && obj.getIsLogged());
     }
 
     @And("I'm the Installer")
@@ -71,11 +71,11 @@ public class roles{
 
     @Then("You can View installation requests")
     public void youCanViewInstallationRequests() {
-        assertTrue("Installer can View installation requests",userRole.equals("installer") && obj.isLogged);
+        assertTrue("Installer can View installation requests",userRole.equals("installer") && obj.getIsLogged());
     }
 
     @And("View schedule appointments")
     public void viewScheduleAppointments() {
-        assertTrue("Installer can View schedule appointments",userRole.equals("installer") && obj.isLogged);
+        assertTrue("Installer can View schedule appointments",userRole.equals("installer") && obj.getIsLogged());
     }
 }
