@@ -114,12 +114,12 @@ public class MyAppT
     public String enteredUsername;
     public boolean passwordUpdated = false;
     public  boolean userCreated = false;
-    public void validUserPass(String user_name, String pass){
+    public void validUserPass(String userName, String pass){
         forget = false;
         for (User u: up) {
-            if (user_name.equals(u.getUserName()) && pass.equals("Forget")) {
+            if (userName.equals(u.getUserName()) && pass.equals("Forget")) {
                 forget = true;
-                enteredUsername = user_name;
+                enteredUsername = userName;
                 break;
             }
         }
@@ -145,9 +145,9 @@ public class MyAppT
             }
         }
     }
-    public void setNamePass(String user_name, String pass){
+    public void setNamePass(String userName, String pass){
         for (User u: up) {
-            if (user_name.equals(u.getUserName()) && u.getPass().equals(pass)) {
+            if (userName.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true;
                 break;
             }
