@@ -10,12 +10,39 @@ public class MyAppT
     private boolean submit = false;
     private boolean available1 = false;
     private boolean available2 = false;
-    public    List<User> up=new  ArrayList<>();
-    public    List<Car> cp = new  ArrayList<>();
-    public    List<Order> op = new  ArrayList<>();
-    public    List<String>date = new  ArrayList<>();
+    private   List<User> up=new  ArrayList<>();
+    private  List<Car> cp = new  ArrayList<>();
+    private   List<Order> op = new  ArrayList<>();
+    private  List<String>date = new  ArrayList<>();
+
+    public List<User> getUp() {
+        return up;
+    }
+    public void setUp(List<User> up) {
+        this.up = up;
+    }
+    public void addUser(User user) {
+        up.add(user);
+    }
+    public List<Car> getCp() {
+        return cp;
+    }
+    public void addCar(Car car) {
+        cp.add(car);
+    }
+    public List<Order> getOp() {
+        return op;
+    }
+    public void addOrder(Order order) {
+        op.add(order);
+    }
+    public List<String> getDate() {
+        return date;
+    }
+    public void addDate(String dates) {
+        date.add(dates);
+    }
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
-    
     public boolean getIsLogged(){
        return  isLogged;
     }
