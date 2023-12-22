@@ -16,9 +16,9 @@ public class loginstep {
         super();
         this.obj = iobj;
         User u1= new User("haya","123","7\3\2004");
-        obj.up.add(u1);
+        obj.addUser(u1);
         User u2= new User("Asma@gmail.com","1234","7\3\2004");
-        obj.up.add(u2);
+        obj.addUser(u2);
     }
 
     @Given("I am not in system")
@@ -81,7 +81,7 @@ public class loginstep {
 
     @When("set new username {string} and pass {string} and bd={string}")
     public void setNewUsernameAndPass(String user_name, String pass,String bd) {
-        obj.up.add(new User(user_name, pass,bd));
+        obj.addUser(new User(user_name, pass,bd));
         enteredUsername = user_name;
         enteredPassword = pass;
     }
@@ -92,3 +92,4 @@ public class loginstep {
         assertTrue("User creation should succeed", obj.userCreated);
     }
 }
+
