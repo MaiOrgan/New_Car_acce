@@ -214,9 +214,9 @@ public class MyAppT
             }
         }
     }
-    public void filterPrice(int price1, int price2,String Categorie){
+    public void filterPrice(int price1, int price2,String categorie){
         for(Car c: cp){
-            if(c.getPrice()>=price1 && c.getPrice()<=price2 && Categorie.equals(c.getCategorie())){
+            if(c.getPrice()>=price1 && c.getPrice()<=price2 && categorie.equals(c.getCategorie())){
                 carArrayList.add(new Car(c.getCarName(),c.getCategorie(),c.getPrice(),c.getAvailab(),c.getDescr()));
             }
         }
