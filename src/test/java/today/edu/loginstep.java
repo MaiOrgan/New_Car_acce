@@ -64,14 +64,14 @@ public class loginstep {
     @When("set valid username {string} and  pass {string}")
     public void setValidUsernameAndPass(String user_name, String pass) {
         obj.validUserPass(user_name,pass);
-        forget=obj.forget;
-        enteredUsername= obj.enteredUsername;
+        forget=obj.getForget();
+        enteredUsername= obj.getEnteredUsername();
     }
 
     @Then("take new pass {string}")
     public void takeNewPass(String newPass) {
         obj.takePass(newPass);
-        assertTrue("New password should be updated", obj.passwordUpdated);
+        assertTrue("New password should be updated", obj.getPasswordUpdated());
     }
 
     @And("i don't have an account")
@@ -89,7 +89,7 @@ public class loginstep {
     @Then("create succeed")
     public void createSucceed() {
         obj.createAcc(enteredUsername,enteredPassword);
-        assertTrue("User creation should succeed", obj.userCreated);
+        assertTrue("User creation should succeed", obj.getUserCreated());
     }
 }
 
