@@ -248,13 +248,15 @@ public class MyAppT
             }
         }
     }
-    public int checkPrice =0;
+    private int checkPrice =0;
+    public int getCheck(){return checkPrice;}
+    public void setCheck(){checkPrice=1;}
     public void newPrice(String name, int newprice){
         for(Car c: cp)
         {
             if((c.getCarName()).equals(name)) {
                 c.setPrice(newprice);
-                checkPrice =1;
+                setCheck();
             }
         }
     }
