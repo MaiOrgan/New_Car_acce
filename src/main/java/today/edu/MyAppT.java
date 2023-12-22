@@ -234,19 +234,22 @@ public class MyAppT
             }
         }
     }
-      public void printCarList(int choose){
+    public void printCarList(int choose){
         if(choose==1){
             for(Car c:carArrayList){
                 logger.info(c.getCarName());
-                logger.info(String.valueOf(c.getPrice()));
-                logger.info(String.valueOf(c.getAvailab())) ;
+                String kk=String.valueOf(c.getPrice());
+                logger.info(kk);
+                String kkk=String.valueOf(c.getAvailab());
+                logger.info(kkk) ;
                 logger.info(c.getDescr());
             }}
         else if (choose==2){
             for(Car c:carArrayList){
                 logger.info(c.getCarName());
                 logger.info(c.getCategorie());
-                logger.info(String.valueOf(c.getAvailab())) ;
+                String kkk=String.valueOf(c.getAvailab());
+                logger.info(kkk) ;
                 logger.info(c.getDescr());
             }
         }
