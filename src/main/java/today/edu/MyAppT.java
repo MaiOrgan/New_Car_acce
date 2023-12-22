@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.logging.Logger;
 public class MyAppT
 {
-    public boolean isLogged;
+    private boolean isLogged;
     public boolean validation;
     public  boolean isInstallation=false;
     public boolean submit = false;
@@ -16,6 +16,12 @@ public class MyAppT
     public  List<String>date = new  ArrayList<>();
 
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
+    public boolean getIsLogged(){
+       return  isLogged;
+    }
+    public void setLogged(boolean isLogged){
+        this.isLogged=isLogged;
+    }
     public MyAppT()
     {
         User u1= new User("haya","123","7\3\2004");
@@ -190,11 +196,11 @@ public class MyAppT
     public void printCarList(int choose){
         if(choose==1){
             for(Car c:carArrayList){
-                 logger.info(c.getCarName());
-                 String kk=String.valueOf(c.getPrice());
-                 logger.info(kk);
-                 String kkk=String.valueOf(c.getAvailab());
-                 logger.info(kkk) ;
+                logger.info(c.getCarName());
+                String kk=String.valueOf(c.getPrice());
+                logger.info(kk);
+                String kkk=String.valueOf(c.getAvailab());
+                logger.info(kkk) ;
                 logger.info(c.getDescr());
             }}
         else{
