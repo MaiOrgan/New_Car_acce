@@ -136,7 +136,10 @@ public class MyAppT
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
 
-                logger.info("Category:- "+c.getCategorie()+" || Price:- "+k+" || The num of available pieces:- "+f+" || Discribtion about it:- "+c.getDescr());
+                logger.info("Category:- "+c.getCategorie());
+                logger.info(" || Price:- "+k);
+                logger.info(" || The num of available pieces:- "+f);
+                logger.info(" || Discribtion about it:- "+c.getDescr());
             }
         }
     }
