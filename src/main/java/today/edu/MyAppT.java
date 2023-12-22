@@ -190,8 +190,8 @@ public class MyAppT
                 setForget(true);
                 enteredUsername = userName;
                 break;
-            }}
-    }
+            
+    }}}
     public void takePass(String newPass){
         for (User user : up) {
             if (user.getUserName().equals(enteredUsername)) {
@@ -202,8 +202,8 @@ public class MyAppT
             if (user.getUserName().equals(enteredUsername) && user.getPass().equals(newPass)) {
                 passwordUpdated = true;
                 break;
-            }}
-    }
+            
+    }}}
     public void createAcc(String enteredUsernam,String enteredPasswor){
         for (User user : up) {
             if (user.getUserName().equals(enteredUsernam) && user.getPass().equals(enteredPasswor)) {
