@@ -76,7 +76,7 @@ public class loginstep {
 
     @And("i don't have an account")
     public void iDonTHaveAnAccount() {
-        obj.isLogged=false;
+        obj.setLogged(false);
     }
 
     @When("set new username {string} and pass {string} and bd={string}")
