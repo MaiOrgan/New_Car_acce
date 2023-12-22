@@ -19,7 +19,7 @@ public class notification {
     }
     @And("I have placed an order")
     public void iHavePlacedAnOrder() {
-        place = obj.isInstallation && obj.available1 && obj.available2 && obj.submit;
+        place = obj.getInstallation() && obj.getAvailable1() && obj.getAvailable2() && obj.getSubmit();
     }
 
     @When("the order is confirmed and updates are available")
