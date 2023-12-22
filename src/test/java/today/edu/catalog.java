@@ -52,8 +52,8 @@ public class catalog {
 
     @Then("List all the products name, prices, availability and descriptions")
     public void listAllTheProductsNamePricesAvailabilityAndDescriptions() {
-        assertNotNull(obj.carArrayList);
         obj.printCarList(1);
+        assertNotNull(obj.carArrayList);
     }
 
     @When("I request information about products by entering there price {int}")
@@ -63,8 +63,8 @@ public class catalog {
 
     @Then("List all the products name, categories, availability and descriptions")
     public void listAllTheProductsNameCategoriesAvailabilityAndDescriptions() {
-        assertNotNull(obj.carArrayList);
         obj.printCarList(2);
+        assertNotNull(obj.carArrayList);
     }
 
     @And("the product categories is loaded {string}")
