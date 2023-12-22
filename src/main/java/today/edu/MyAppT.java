@@ -193,7 +193,8 @@ public class MyAppT
                  logger.info(c.getCarName());
                  String kk=String.valueOf(c.getPrice());
                  logger.info(kk);
-                 logger.info(String.format(" %d", c.getAvailab())) ;
+                 String kkk=String.valueOf(c.getAvailab());
+                 logger.info(kkk) ;
                 logger.info(c.getDescr());
             }}
         else{
