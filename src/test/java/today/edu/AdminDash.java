@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 public class AdminDash {
     public MyAppT obj;
     int CustList =0;
-    public boolean updates = false;
+    public boolean updates =  false;
     public boolean appears = false;
     public String name;
     public AdminDash(MyAppT iobj)
