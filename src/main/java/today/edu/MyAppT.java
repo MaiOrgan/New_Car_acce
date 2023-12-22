@@ -159,15 +159,30 @@ public class MyAppT
         }
         return yuy;
     }
-    public boolean forget = false;
-    public String enteredUsername;
-    public boolean passwordUpdated = false;
-    public  boolean userCreated = false;
+    private boolean forget = false;
+    public void setForget(boolean forget){
+        this.forget=forget;
+    }
+    public boolean getForget(){
+        return forget;
+    }
+    private String enteredUsername;
+    public String getEnteredUsername(){
+        return enteredUsername;
+    }
+    private boolean passwordUpdated = false;
+    public boolean getPasswordUpdated(){
+        return passwordUpdated;
+    }
+    private  boolean userCreated = false;
+    public boolean getUserCreated(){
+        return userCreated;
+    }
     public void validUserPass(String userName, String pass){
-        forget = false;
+         setForget(false);
         for (User u: up) {
             if (userName.equals(u.getUserName()) && pass.equals("Forget")) {
-                forget = true;
+                setForget(true);
                 enteredUsername = userName;
                 break;
             }}
@@ -200,8 +215,14 @@ public class MyAppT
             }
         }
     }
-    public String dateee ;
-    public String cname;
+    private String dateee ;
+    private String cname;
+    public String getDateee(){
+        return dateee;
+    }
+    public String getCname(){
+         return cname;
+    }
     public void fillModelAndDate(String model,String datee){
         for(String d: getDate()){
             if (d.equals(datee)) {
@@ -226,7 +247,10 @@ public class MyAppT
         logger.info(kk);
         logger.info(cc.getCategorie());
     }
-    public List<Car> carArrayList = new ArrayList<>();
+    private List<Car> carArrayList = new ArrayList<>();
+    public List<Car> getCarArrayList() {
+        return carArrayList;
+    }
     public void enterCategory(String categ){
         for(Car c: cp ){
             if(categ.equals(c.getCategorie())){
