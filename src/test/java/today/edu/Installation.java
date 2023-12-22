@@ -28,7 +28,7 @@ public class Installation {
     }
     @And("I'm on the installation request page")
     public void iMOnTheInstallationRequestPage() {
-        obj.isInstallation=true;
+        obj.setInstallation(true);
     }
 
     @When("the customer fills in the following details: model is {string} and date {string}")
@@ -40,19 +40,19 @@ public class Installation {
 
     @And("submits the form")
     public void submitsTheForm() {
-        obj.submit=true;
+        obj.setSubmit(true);
         obj.op.add(new Order(uname, cname,dateee));
     }
 
     @Then("the request should be successfully submitted if the date available")
     public void theRequestShouldBeSuccessfullySubmittedIfTheDateAvailable() {
-        assertTrue("The Installation request submitted", obj.isInstallation && obj.available1 && obj.available2 && obj.submit);
+        assertTrue("The Installation request submitted", obj.getInstallation() && obj.getAvailable1() && obj.getAvailable2() && obj.getSubmit());
     }
 
 
     @Then("the request should not be submitted if the date is not available")
     public void theRequestShouldNotBeSubmittedIfTheDateIsNotAvailable() {
-        assertTrue("The Installation request didn't submit", obj.isInstallation && (!obj.available1 || !obj.available2) && obj.submit);
+        assertTrue("The Installation request didn't submit", obj.getInstallation() && (!obj.getAvailable1() || !obj.getAvailable2()) && obj.getSubmit());
     }
 
 }
