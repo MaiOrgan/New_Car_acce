@@ -17,9 +17,9 @@ public class catalog {
         super();
         this.obj = iobj;
         Car c1 = new Car("motor","Interior",5000,1,"essintial part");
-        obj.cp.add(c1);
+        obj.addCar(c1);
         Car c2 = new Car("motor-v2","Interior",5000,100,"essintial part");
-        obj.cp.add(c2);
+        obj.addCar(c2);
     }
 
     @When("the name is {string} and categorie is {string} and price is {int} and availability is {int} and descriptions is {string}")
@@ -47,7 +47,7 @@ public class catalog {
 
     @When("I request information about products by entering there categories {string}")
     public void iRequestInformationAboutProductsByEnteringThereCategories(String categ) {
-       obj.enterCategory(categ);
+        obj.enterCategory(categ);
     }
 
     @Then("List all the products name, prices, availability and descriptions")
