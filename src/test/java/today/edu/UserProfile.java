@@ -24,15 +24,15 @@ public class UserProfile {
         pass = pass1;
     }
 
-    @Then("Your information Updates successfully")
+      @Then("Your information Updates successfully")
     public void yourInformationUpdatesSuccessfully() {
        obj.updatesSuccessfully(name,pass);
-        assertTrue("Your information Updates successfully", obj.updates);
+        assertTrue("Your information Updates successfully", obj.getUpdates());
     }
 
     @Then("The information should appear")
     public void theInformationShouldAppear() {
         obj.appearInformation(name);
-        assertTrue("Your information appear successfully", obj.appear);
+        assertTrue("Your information appear successfully", obj.getApear());
     }
 }
