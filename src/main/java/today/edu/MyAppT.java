@@ -179,7 +179,7 @@ public class MyAppT
         logger.info(kk);
         logger.info(cc.getCategorie());
     }
-    public ArrayList<Car> carArrayList = new ArrayList<>();
+    public List<Car> carArrayList = new ArrayList<>();
     public void enterCategory(String categ){
         for(Car c: cp ){
             if(categ.equals(c.getCategorie())){
