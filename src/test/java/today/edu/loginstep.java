@@ -32,7 +32,7 @@ public class loginstep {
     }
     @Then("login succeed")
     public void loginSucceed() {
-        assertTrue("Login should succeed", obj.validation);
+        assertTrue("Login should succeed", obj.getValidation());
     }
     @When("set invalid username {string} and pass {string}")
     public void setInvalidUsernameAndPass(String user_name, String pass) {
@@ -40,7 +40,7 @@ public class loginstep {
     }
     @Then("login failed")
     public void loginFailed() {
-        assertFalse("Login should fail", obj.validation);
+        assertFalse("Login should fail", obj.getValidation());
     }
 
     @When("set valid username {string} and invalid pass {string}")
@@ -92,4 +92,3 @@ public class loginstep {
         assertTrue("User creation should succeed", obj.userCreated);
     }
 }
-
