@@ -130,15 +130,17 @@ public class MyAppT
         logger.info("You have added this product in a successfully way");
     }
 
-    public void iRequestInformationAboutSpecificProductByEnteringItsName(String name) {
+   public void iRequestInformationAboutSpecificProductByEnteringItsName(String name) {
         for(Car c: cp ){
             if(name.equals(c.getCarName())){
                 String k=String.valueOf(c.getPrice());
                 String f=String.valueOf(c.getAvailab());
 
                 logger.info("Category:- "+c.getCategorie());
-                logger.info(" || Price:- "+k);
-                logger.info(" || The num of available pieces:- "+f);
+                logger.info(" || Price:- ");
+                logger.info(k);
+                logger.info(" || The num of available pieces:- ");
+                logger.info(f);
                 logger.info(" || Discribtion about it:- "+c.getDescr());
             }
         }
