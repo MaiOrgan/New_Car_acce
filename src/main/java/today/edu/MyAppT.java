@@ -241,12 +241,14 @@ public class MyAppT
             }
         }
     }
-    public int exist=0;
+    private int exist=0;
+    public void setE(){exist=1;}
+    public void getE(){return exist;}
     public void addProduct(String name){
         for(Car c:cp)
         {
             if ((c.getCarName()).equals(name)) {
-                exist = 1;
+                setE();
                 break;
             }
         }
