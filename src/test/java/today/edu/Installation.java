@@ -12,13 +12,13 @@ public class Installation {
         super();
         this.obj = iobj;
         User u1= new User("haya","123","7\3\2004");
-        obj.up.add(u1);
+        obj.addUser(u1);
         User u2= new User("Asma@gmail.com","1234","7\3\2004");
-        obj.up.add(u2);
+        obj.addUser(u2);
         Car c1 = new Car("motor","Interior",5000,1,"essintial part");
-        obj.cp.add(c1);
+        obj.addCar(c1);
         Car c2 = new Car("motor-v2","Interior",5000,100,"essintial part");
-        obj.cp.add(c2);
+        obj.addCar(c2);
         c2.setAvailab(100);
     }
 
@@ -41,7 +41,7 @@ public class Installation {
     @And("submits the form")
     public void submitsTheForm() {
         obj.setSubmit(true);
-        obj.op.add(new Order(uname, cname,dateee));
+        obj.addOrder(new Order(uname, cname,dateee));
     }
 
     @Then("the request should be successfully submitted if the date available")
