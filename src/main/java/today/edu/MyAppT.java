@@ -190,9 +190,10 @@ public class MyAppT
     public void printCarList(int choose){
         if(choose==1){
             for(Car c:carArrayList){
-                logger.info(c.getCarName());
-                logger.info(String.format(" %d", c.getPrice()));
-                logger.info(String.format(" %d", c.getAvailab())) ;
+                 logger.info(c.getCarName());
+                 String kk=String.valueOf(c.getPrice());
+                 logger.info(kk);
+                 logger.info(String.format(" %d", c.getAvailab())) ;
                 logger.info(c.getDescr());
             }}
         else{
