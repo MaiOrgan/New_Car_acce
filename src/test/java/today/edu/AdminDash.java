@@ -64,7 +64,7 @@ public class AdminDash {
 
     @Then("The price must change successfully")
     public void thePriceMustChangeSuccessfully() {
-        assertEquals(1, obj.checkPrice);
+        assertEquals(1, obj.getCheck());
     }
 
     @When("I give you a date {string}")
