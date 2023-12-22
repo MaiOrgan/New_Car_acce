@@ -36,38 +36,38 @@ public class MyAppT
         date.add("22-10-2023");
         date.add("5-11-2023");
     }
-    public void setUsernameAndPassAndPassFromSystem(String Name, String pass) {
+    public void setUsernameAndPassAndPassFromSystem(String name, String pass) {
 
         for (User u: up) {
 
-            if (Name.equals(u.getUserName()) && u.getPass().equals(pass)) {
+            if (name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true;
 
                 logger.info("hi");
                 break;
             }}
     }
-    public void setInvalidUsernameAndPass(String Name, String pass) {
+    public void setInvalidUsernameAndPass(String name, String pass) {
         // Write code here that turns the phrase above into concrete actions
         for (User u: up) {
-            if (Name.equals(u.getUserName()) && u.getPass().equals(pass)) {
+            if (name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true; break;
             }
         }
     }
-    public void setValidUsernameAndInvalidPass(String Name, String pass) {
+    public void setValidUsernameAndInvalidPass(String name, String pass) {
         for (User u: up) {
-            if (Name.equals(u.getUserName()) && u.getPass().equals(pass)) {
+            if (name.equals(u.getUserName()) && u.getPass().equals(pass)) {
                 validation = true; break;
             }
         }
     }
-    public void setEmptyUsernameAndPass(String Name, String pass) {
-        if (Name.isEmpty() && !pass.isEmpty())
+    public void setEmptyUsernameAndPass(String name, String pass) {
+        if (name.isEmpty() && !pass.isEmpty())
             validation = false;
     }
-    public void setValidUsernameAndEmptyPass(String Name, String pass) {
-        if (pass.isEmpty()&& !Name.isEmpty())
+    public void setValidUsernameAndEmptyPass(String name, String pass) {
+        if (pass.isEmpty()&& !name.isEmpty())
             validation = false;
     }
     public void iAmNotInSystem(MyAppT obj)
