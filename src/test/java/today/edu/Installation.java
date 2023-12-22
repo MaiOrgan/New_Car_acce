@@ -34,8 +34,8 @@ public class Installation {
     @When("the customer fills in the following details: model is {string} and date {string}")
     public void theCustomerFillsInTheFollowingDetailsModelIsAndDate(String model, String datee) {
         obj.fillModelAndDate(model,datee);
-        cname=obj.cname;
-        dateee=obj.dateee;
+        cname=obj.getCname();
+        dateee=obj.getDateee();
     }
 
     @And("submits the form")
