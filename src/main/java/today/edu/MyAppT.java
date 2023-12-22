@@ -243,7 +243,7 @@ public class MyAppT
     }
     private int exist=0;
     public void setE(){exist=1;}
-    public void getE(){return exist;}
+    public int getE(){return exist;}
     public void addProduct(String name){
         for(Car c:cp)
         {
