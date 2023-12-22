@@ -52,7 +52,6 @@ public class catalog {
 
     @Then("List all the products name, prices, availability and descriptions")
     public void listAllTheProductsNamePricesAvailabilityAndDescriptions() {
-        obj.printCarList(1);
         assertNotNull(obj.getCarArrayList());
     }
 
@@ -63,7 +62,6 @@ public class catalog {
 
     @Then("List all the products name, categories, availability and descriptions")
     public void listAllTheProductsNameCategoriesAvailabilityAndDescriptions() {
-        obj.printCarList(2);
         assertNotNull(obj.getCarArrayList());
     }
 
