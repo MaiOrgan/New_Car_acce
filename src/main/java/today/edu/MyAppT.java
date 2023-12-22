@@ -130,7 +130,7 @@ public class MyAppT
         logger.info("You have added this product in a successfully way");
     }
 
-   public void iRequestInformationAboutSpecificProductByEnteringItsName(String name) {
+    public void iRequestInformationAboutSpecificProductByEnteringItsName(String name) {
         for(Car c: cp ){
             if(name.equals(c.getCarName())){
                 String k=String.valueOf(c.getPrice());
@@ -263,26 +263,7 @@ public class MyAppT
             }
         }
     }
-    public void printCarList(int choose){
-        if(choose==1){
-            for(Car c:carArrayList){
-                logger.info(c.getCarName());
-                String kk=String.valueOf(c.getPrice());
-                logger.info(kk);
-                String kkk=String.valueOf(c.getAvailab());
-                logger.info(kkk) ;
-                logger.info(c.getDescr());
-            }}
-        else if (choose==2){
-            for(Car c:carArrayList){
-                logger.info(c.getCarName());
-                logger.info(c.getCategorie());
-                String kkk=String.valueOf(c.getAvailab());
-                logger.info(kkk) ;
-                logger.info(c.getDescr());
-            }
-        }
-    }
+
     public void requestByPrice(int price){
         for(Car c: getCp() ){
             if(price==c.getPrice()){
