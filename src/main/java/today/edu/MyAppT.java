@@ -175,7 +175,8 @@ public class MyAppT
         logger.info(cc.getDescr());
         String k=String.valueOf(cc.getPrice());
         logger.info(k);
-        logger.info(String.format(" %d", cc.getAvailab())) ;
+        String kk=String.valueOf(cc.getAvailab());
+        logger.info(kk);
         logger.info(cc.getCategorie());
     }
     public ArrayList<Car> carArrayList = new ArrayList<>();
