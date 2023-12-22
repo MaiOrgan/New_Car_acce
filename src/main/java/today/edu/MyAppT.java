@@ -5,23 +5,42 @@ import java.util.logging.Logger;
 public class MyAppT
 {
     private boolean isLogged;
-    public boolean validation;
-    public  boolean isInstallation=false;
-    public boolean submit = false;
-    public boolean available1 = false;
-    public boolean available2 = false;
-    public  List<User> up=new  ArrayList<>();
-    public  List<Car> cp = new  ArrayList<>();
-    public  List<Order> op = new  ArrayList<>();
-    public  List<String>date = new  ArrayList<>();
-
+    private boolean validation;
+    private   boolean isInstallation=false;
+    private boolean submit = false;
+    private boolean available1 = false;
+    private boolean available2 = false;
+    public    List<User> up=new  ArrayList<>();
+    public    List<Car> cp = new  ArrayList<>();
+    public    List<Order> op = new  ArrayList<>();
+    public    List<String>date = new  ArrayList<>();
     private static final Logger logger = Logger.getLogger(MyAppT.class.getName());
+    
     public boolean getIsLogged(){
        return  isLogged;
     }
     public void setLogged(boolean isLogged){
         this.isLogged=isLogged;
     }
+    public boolean getValidation(){
+        return validation;
+    }
+    public boolean getInstallation(){
+        return isInstallation;
+    }
+    public void setInstallation(boolean installation){
+        this.isInstallation=installation;
+    }
+    public boolean getSubmit(){
+        return submit;
+    }
+    public void setSubmit(boolean submit){
+        this.submit=submit;
+    }
+    public boolean getAvailable1(){
+        return available1;
+    }
+    public boolean getAvailable2(){return available2;}
     public MyAppT()
     {
         User u1= new User("haya","123","7\3\2004");
