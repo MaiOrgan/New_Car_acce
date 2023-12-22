@@ -94,8 +94,8 @@ public class MyAppT
 
                 logger.info("hi");
                 break;
-            }}
-    }
+           
+    }}}
     public void setInvalidUsernameAndPass(String name, String pass) {
         // Write code here that turns the phrase above into concrete actions
         for (User u: up) {
