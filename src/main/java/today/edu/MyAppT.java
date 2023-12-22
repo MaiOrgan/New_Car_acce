@@ -297,8 +297,14 @@ public class MyAppT
             }
         }
     }
-    public boolean updates = false;
-    public boolean appear = false;
+    private boolean updates = false;
+    private boolean appear = false;
+    public boolean getUpdates(){
+        return updates;
+    }
+    public boolean getApear(){
+        return appear;
+    }
     public void updatesSuccessfully(String name,String pass){
         for(User u: up){
             if(name.equals(u.getUserName())){
