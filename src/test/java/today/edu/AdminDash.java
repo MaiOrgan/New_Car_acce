@@ -17,9 +17,9 @@ public class AdminDash {
         super();
         this.obj=iobj;
         Car c1 = new Car("motor","Interior",5000,1,"essintial part");
-        obj.cp.add(c1);
+        obj.addCar(c1);
         Car c2 = new Car("motor-v2","Interior",5000,100,"essintial part");
-        obj.cp.add(c2);
+        obj.addCar(c2);
     }
     @When("the name is {string} and the category is {string} and the price is {int} and the num of av p is {int} and the discription is {string}")
     public void theNameIsAndTheCategoryIsAndThePriceIsAndTheNumOfAvPIsAndTheDiscriptionIs(String arg0, String arg1, int arg2, int arg3, String arg4) {
@@ -59,7 +59,7 @@ public class AdminDash {
     @When("I give the name of product{string} and the new price for it {int}")
     public void iGiveTheNameOfProductAndTheNewPriceForIt(String name, int newprice)
     {
-       obj.newPrice(name,newprice);
+        obj.newPrice(name,newprice);
     }
 
     @Then("The price must change successfully")
@@ -69,7 +69,7 @@ public class AdminDash {
 
     @When("I give you a date {string}")
     public void iGiveYouADate(String arg0) {
-        obj.date.add(arg0);
+        obj.addDate(arg0);
     }
 
     @Then("this date must be added to the appointment as a free day to install")
